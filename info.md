@@ -2,30 +2,30 @@
 
 ## English
 
-Native Home Assistant companion integration for SBC5 Control Center on Raspberry Pi 5.
+Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Requirement:** the **SBC5 Control Center App/runtime must already be installed and running**. The App provides Raspberry Pi 5 host telemetry and control services; this integration exposes them as native Home Assistant entities and device information.
+**Version:** 2.8.25  
+**Home Assistant:** >= 2026.10.1
 
-Main project / required App:
-https://github.com/krlmdfk/sbc5-control-center
+**Requirement:** the **SBC5 Control Center App/runtime must already be installed and running**.
 
-HACS integration repository:
-https://github.com/krlmdfk/sbc5-control-center-integration
+Main project / required App: https://github.com/krlmdfk/sbc5-control-center  
+HACS integration repository: https://github.com/krlmdfk/sbc5-control-center-integration
 
-Install this repository in HACS as a **Custom repository → Integration**, install **SBC5 Control Center**, then restart Home Assistant when requested.
+The integration exposes SBC5 device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
 
 ---
 
 ## Polski
 
-Natywna integracja towarzysząca Home Assistant dla SBC5 Control Center na Raspberry Pi 5.
+Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wymaganie:** **aplikacja/runtime SBC5 Control Center musi być wcześniej zainstalowana i uruchomiona**. Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące, a ta integracja udostępnia je jako natywne encje i informacje o urządzeniu w Home Assistant.
+**Wersja:** 2.8.25  
+**Home Assistant:** >= 2026.10.1
 
-Główny projekt / wymagana aplikacja:
-https://github.com/krlmdfk/sbc5-control-center
+**Wymaganie:** **aplikacja/runtime SBC5 Control Center musi być wcześniej zainstalowana i uruchomiona**.
 
-Repozytorium integracji HACS:
-https://github.com/krlmdfk/sbc5-control-center-integration
+Główny projekt / wymagana aplikacja: https://github.com/krlmdfk/sbc5-control-center  
+Repozytorium integracji HACS: https://github.com/krlmdfk/sbc5-control-center-integration
 
-Dodaj to repozytorium w HACS jako **Niestandardowe repozytorium → Integracja**, zainstaluj **SBC5 Control Center**, a następnie uruchom ponownie Home Assistant, gdy HACS o to poprosi.
+Integracja udostępnia w Home Assistant informacje o urządzeniu SBC5, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
