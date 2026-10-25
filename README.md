@@ -6,7 +6,7 @@
 
 [![SBC5 Control Center App](https://raw.githubusercontent.com/krlmdfk/sbc5-control-center/main/branding/icon-256.png)](https://github.com/krlmdfk/sbc5-control-center)
 
-> **App required / Aplikacja wymagana:** this HACS integration is a companion to the **SBC5 Control Center App/runtime**. Click the SBC5 logo above to open the main application repository.  
+> **App required / Aplikacja wymagana:** this HACS integration is a companion to the **SBC5 Control Center App/runtime**. Click the SBC5 logo above to open the main application repository.
 > **Wymagana aplikacja:** integracja HACS współpracuje z **SBC5 Control Center App/runtime**. Kliknij logo SBC5 powyżej, aby otworzyć główne repozytorium aplikacji.
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Support / Wsparcie](https://github.com/krlmdfk/sbc5-control-center/issues)**
