@@ -14,7 +14,7 @@
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
 
-**Version 2.8.25 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 2.8.26 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -32,7 +32,7 @@ The required Raspberry Pi 5 host services are provided by the **SBC5 Control Cen
 
 ### Current release
 
-Bilingual documentation and professional cross-linking with the required SBC5 Control Center App/runtime.
+Documentation and branding release: complete English/Polish documentation, professional SBC5 branding, clickable App/HACS links and persistent release templates.
 
 ### Repository relationship
 
@@ -93,7 +93,7 @@ Wymagane usługi hosta Raspberry Pi 5 zapewnia **SBC5 Control Center App/runtime
 
 ### Aktualne wydanie
 
-Dwujęzyczna dokumentacja oraz profesjonalne wzajemne linkowanie z wymaganą aplikacją/runtime SBC5 Control Center.
+Wydanie dokumentacyjne i brandingowe: pełna dokumentacja polska/angielska, profesjonalny branding SBC5, klikalne linki App/HACS oraz trwałe szablony kolejnych wydań.
 
 ### Relacja repozytoriów
 

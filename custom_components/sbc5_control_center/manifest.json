@@ -5,9 +5,9 @@
     "@krlmdfk"
   ],
   "config_flow": true,
-  "documentation": "https://github.com/krlmdfk/sbc5-control-center-integration",
+  "documentation": "https://github.com/krlmdfk/sbc5-control-center",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/krlmdfk/sbc5-control-center-integration/issues",
+  "issue_tracker": "https://github.com/krlmdfk/sbc5-control-center/issues",
   "requirements": [],
-  "version": "2.8.25"
+  "version": "2.8.26"
 }

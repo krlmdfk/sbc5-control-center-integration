@@ -14,7 +14,7 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 2.8.25
+**Version:** 2.8.26
 
 **Home Assistant:** >= 2026.10.1
 
@@ -22,7 +22,7 @@ Native Home Assistant companion integration for **SBC5 Control Center** on Raspb
 
 The App provides Raspberry Pi 5 host telemetry and control services. This HACS integration exposes device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
 
-Bilingual documentation and professional App ↔ Integration navigation.
+Documentation and branding release: complete English/Polish documentation, professional SBC5 branding, clickable App/HACS links and persistent release templates.
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
@@ -32,7 +32,7 @@ Bilingual documentation and professional App ↔ Integration navigation.
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 2.8.25
+**Wersja:** 2.8.26
 
 **Home Assistant:** >= 2026.10.1
 
@@ -40,6 +40,6 @@ Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na R
 
 Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. Integracja HACS udostępnia w Home Assistant informacje o urządzeniu, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
 
-Dwujęzyczna dokumentacja oraz profesjonalna nawigacja App ↔ Integracja.
+Wydanie dokumentacyjne i brandingowe: pełna dokumentacja polska/angielska, profesjonalny branding SBC5, klikalne linki App/HACS oraz trwałe szablony kolejnych wydań.
 
 **[Otwórz wymaganą aplikację SBC5 Control Center →](https://github.com/krlmdfk/sbc5-control-center)**
