@@ -1,5 +1,10 @@
 # Changelog — SBC5 Control Center
 
+## 2.8.29
+
+- App Store installation and automatic update delivery. Adds Home Assistant Apps repository support, automatic release delivery and improved first-install documentation. No cooling, AI, CPU/GPU or boot-control algorithm changes.
+- Instalacja przez sklep Apps i automatyczna dystrybucja aktualizacji. Dodaje obsługę repozytorium Home Assistant Apps, automatyczne publikowanie wydań i ulepszoną dokumentację pierwszej instalacji. Bez zmian algorytmów chłodzenia, AI, CPU/GPU ani sterowania boot.
+
 ## 2.8.28
 
 - Adds a complete first-installation guide and release automation. No runtime control logic changes.
