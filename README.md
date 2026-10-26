@@ -12,7 +12,7 @@
 >
 > Integracja HACS współpracuje z **SBC5 Control Center App/runtime**. Kliknij logo SBC5 powyżej, aby otworzyć wymagane główne repozytorium aplikacji.
 
-**[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
+**[Project Website](https://krlmdfk.github.io/sbc5-control-center/)** · **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
 
 **Version 2.8.32 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
@@ -20,11 +20,21 @@
 
 ## English
 
-Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
+Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5. It exposes SBC5 telemetry and control state as Home Assistant devices and entities, making Raspberry Pi 5 cooling, monitoring and diagnostics available natively in Home Assistant.
 
 ### What this repository provides
 
 This repository contains the **Home Assistant integration only**. It exposes SBC5 telemetry and control state natively in Home Assistant, including device information, diagnostics, update state and Restart Manager entities.
+
+Typical discovery/use cases include:
+
+- Raspberry Pi 5 monitoring in Home Assistant
+- Raspberry Pi 5 telemetry and diagnostics
+- CPU/GPU monitoring entities
+- temperature, PWM and fan/RPM sensors
+- SBC5 cooling and runtime state in Home Assistant
+- Home Assistant custom integration for Raspberry Pi 5
+- HACS-managed SBC5 integration
 
 The required Raspberry Pi 5 host services are provided by the **SBC5 Control Center App/runtime** from the main project:
 
@@ -94,11 +104,21 @@ Apache License 2.0. SBC5 Control Center is an independent project and is not end
 
 ## Polski
 
-Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
+Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5. Udostępnia telemetrię i stan sterowania SBC5 jako urządzenie i encje Home Assistant, dzięki czemu monitoring, chłodzenie i diagnostyka Raspberry Pi 5 są dostępne bezpośrednio w Home Assistant.
 
 ### Co zawiera to repozytorium
 
 Repozytorium zawiera **wyłącznie integrację Home Assistant**. Udostępnia ona natywnie w Home Assistant telemetrię i stan sterowania SBC5, w tym informacje o urządzeniu, diagnostykę, stan aktualizacji oraz encje Restart Managera.
+
+Typowe zastosowania i frazy wyszukiwawcze obejmują:
+
+- monitoring Raspberry Pi 5 w Home Assistant
+- telemetrię i diagnostykę Raspberry Pi 5
+- encje monitoringu CPU/GPU
+- sensory temperatury, PWM oraz wentylatora/RPM
+- stan chłodzenia i runtime SBC5 w Home Assistant
+- niestandardową integrację Home Assistant dla Raspberry Pi 5
+- integrację SBC5 zarządzaną przez HACS
 
 Wymagane usługi hosta Raspberry Pi 5 zapewnia **SBC5 Control Center App/runtime** z głównego projektu:
 
