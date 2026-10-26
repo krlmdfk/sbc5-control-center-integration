@@ -14,7 +14,7 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 2.8.26
+**Version:** 2.8.27
 
 **Home Assistant:** >= 2026.10.1
 
@@ -22,7 +22,9 @@ Native Home Assistant companion integration for **SBC5 Control Center** on Raspb
 
 The App provides Raspberry Pi 5 host telemetry and control services. This HACS integration exposes device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
 
-Documentation and branding release: complete English/Polish documentation, professional SBC5 branding, clickable App/HACS links and persistent release templates.
+For the **complete SBC5 Lovelace dashboard**, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**. The native integration itself can operate without these frontend cards.
+
+Dependency documentation release: clearly documents the required SBC5 App/runtime and the Mushroom, card-mod and ApexCharts Card frontend dependencies for the complete Lovelace dashboard. No cooling, AI, CPU/GPU or boot-configuration logic changes.
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
@@ -32,7 +34,7 @@ Documentation and branding release: complete English/Polish documentation, profe
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 2.8.26
+**Wersja:** 2.8.27
 
 **Home Assistant:** >= 2026.10.1
 
@@ -40,6 +42,8 @@ Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na R
 
 Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. Integracja HACS udostępnia w Home Assistant informacje o urządzeniu, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
 
-Wydanie dokumentacyjne i brandingowe: pełna dokumentacja polska/angielska, profesjonalny branding SBC5, klikalne linki App/HACS oraz trwałe szablony kolejnych wydań.
+Dla **kompletnego dashboardu Lovelace SBC5** zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**. Sama natywna integracja może działać bez tych kart frontendowych.
+
+Wydanie dokumentacyjne zależności: czytelnie opisano wymaganą aplikację/runtime SBC5 oraz zależności interfejsu Mushroom, card-mod i ApexCharts Card potrzebne do kompletnego dashboardu Lovelace. Bez zmian logiki chłodzenia, AI, CPU/GPU ani konfiguracji boot.
 
 **[Otwórz wymaganą aplikację SBC5 Control Center →](https://github.com/krlmdfk/sbc5-control-center)**
