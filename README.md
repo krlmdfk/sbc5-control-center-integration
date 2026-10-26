@@ -14,7 +14,7 @@
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
 
-**Version 2.8.31 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 2.8.32 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -32,7 +32,7 @@ The required Raspberry Pi 5 host services are provided by the **SBC5 Control Cen
 
 ### Current release
 
-Migration finalization hotfix: imported durable CPU/GPU profile state now wins over stale Store/Supervisor defaults until native App options are synchronized; adds a verified manifest-driven local ZIP packer and automatic release asset publishing. No Adaptive PWM, AI Cooling, fan calibration or boot-control algorithm changes.
+Runtime robustness hotfix: guarantees writable runtime scratch storage, hardens AI qualification templates against partial telemetry, throttles repeated boot/config write warnings when Host Access is unavailable, and adds explicit Protection Mode/Host PID diagnostics. No Adaptive PWM, AI Cooling model/qualification, fan calibration, CPU/GPU profile, or boot-control algorithm changes.
 
 ### Repository relationship
 
@@ -106,7 +106,7 @@ Wymagane usługi hosta Raspberry Pi 5 zapewnia **SBC5 Control Center App/runtime
 
 ### Aktualne wydanie
 
-Hotfix finalizacji migracji: zaimportowany trwały stan profili CPU/GPU ma teraz pierwszeństwo przed starymi domyślnymi wartościami Store/Supervisor do czasu synchronizacji natywnych opcji aplikacji; dodano zweryfikowany generator lokalnych ZIP-ów oparty na manifeście i automatyczną publikację paczki w Release. Bez zmian Adaptive PWM, AI Cooling, kalibracji wentylatora ani algorytmów sterowania boot.
+Hotfix odporności runtime: gwarantuje zapisywalny katalog roboczy runtime, zabezpiecza szablony kwalifikacji AI na niepełną telemetrię, ogranicza powtarzane komunikaty o niedostępnym config.txt i dodaje jawną diagnostykę Protection Mode/Host PID. Bez zmian Adaptive PWM, modelu/kwalifikacji AI Cooling, kalibracji wentylatora, profili CPU/GPU ani algorytmów sterowania boot.
 
 ### Relacja repozytoriów
 
