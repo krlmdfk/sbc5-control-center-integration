@@ -14,7 +14,7 @@
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
 
-**Version 2.8.29 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 2.8.30 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -32,7 +32,7 @@ The required Raspberry Pi 5 host services are provided by the **SBC5 Control Cen
 
 ### Current release
 
-App Store and automatic update delivery release. Adds Home Assistant Apps repository support, automatic release delivery and improved first-install documentation. No cooling, AI, CPU/GPU or boot-control algorithm changes.
+Migration/Hybrid release: safe local-to-Apps Store handoff preserves AI, fan calibration, CPU/GPU profiles and user options with SHA-256 validation and rollback; hybrid local ZIP updates delegate full Store runtime updates to Supervisor while retaining direct UI-only ZIP support. No cooling or AI control algorithm changes.
 
 ### Repository relationship
 
@@ -106,7 +106,7 @@ Wymagane usługi hosta Raspberry Pi 5 zapewnia **SBC5 Control Center App/runtime
 
 ### Aktualne wydanie
 
-Instalacja przez sklep Apps i automatyczna dystrybucja aktualizacji. Dodaje obsługę repozytorium Home Assistant Apps, automatyczne publikowanie wydań i ulepszoną dokumentację pierwszej instalacji. Bez zmian algorytmów chłodzenia, AI, CPU/GPU ani sterowania boot.
+Wydanie Migration/Hybrid: bezpieczny handoff Local → Apps Store zachowuje AI, kalibrację wentylatora, profile CPU/GPU i opcje użytkownika z walidacją SHA-256 oraz rollbackiem; hybrydowe lokalne ZIP-y delegują pełną aktualizację runtime wersji sklepowej do Supervisora, zachowując bezpośrednie aktualizacje UI-only. Bez zmian algorytmów chłodzenia ani sterowania AI.
 
 ### Relacja repozytoriów
 

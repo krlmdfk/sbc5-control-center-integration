@@ -14,7 +14,7 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 2.8.29
+**Version:** 2.8.30
 
 **Home Assistant:** >= 2026.10.1
 
@@ -24,7 +24,7 @@ The App provides Raspberry Pi 5 host telemetry and control services. This HACS i
 
 For the **complete SBC5 Lovelace dashboard**, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**. The native integration itself can operate without these frontend cards.
 
-App Store and automatic update delivery release. Adds Home Assistant Apps repository support, automatic release delivery and improved first-install documentation. No cooling, AI, CPU/GPU or boot-control algorithm changes.
+Migration/Hybrid release: safe local-to-Apps Store handoff preserves AI, fan calibration, CPU/GPU profiles and user options with SHA-256 validation and rollback; hybrid local ZIP updates delegate full Store runtime updates to Supervisor while retaining direct UI-only ZIP support. No cooling or AI control algorithm changes.
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
@@ -34,7 +34,7 @@ App Store and automatic update delivery release. Adds Home Assistant Apps reposi
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 2.8.29
+**Wersja:** 2.8.30
 
 **Home Assistant:** >= 2026.10.1
 
@@ -44,6 +44,6 @@ Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. In
 
 Dla **kompletnego dashboardu Lovelace SBC5** zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**. Sama natywna integracja może działać bez tych kart frontendowych.
 
-Instalacja przez sklep Apps i automatyczna dystrybucja aktualizacji. Dodaje obsługę repozytorium Home Assistant Apps, automatyczne publikowanie wydań i ulepszoną dokumentację pierwszej instalacji. Bez zmian algorytmów chłodzenia, AI, CPU/GPU ani sterowania boot.
+Wydanie Migration/Hybrid: bezpieczny handoff Local → Apps Store zachowuje AI, kalibrację wentylatora, profile CPU/GPU i opcje użytkownika z walidacją SHA-256 oraz rollbackiem; hybrydowe lokalne ZIP-y delegują pełną aktualizację runtime wersji sklepowej do Supervisora, zachowując bezpośrednie aktualizacje UI-only. Bez zmian algorytmów chłodzenia ani sterowania AI.
 
 **[Otwórz wymaganą aplikację SBC5 Control Center →](https://github.com/krlmdfk/sbc5-control-center)**
