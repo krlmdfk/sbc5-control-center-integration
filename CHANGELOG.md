@@ -1,5 +1,10 @@
 # Changelog — SBC5 Control Center
 
+## 2.8.28
+
+- Adds a complete first-installation guide and release automation. No runtime control logic changes.
+- Dodaje kompletny przewodnik pierwszej instalacji i automatyzację wydań. Bez zmian logiki sterowania runtime.
+
 Historia zmian projektu. Aktualny stan, instalacja i obsługa są opisane w `INFO.md`, `DOCUMENTATION.md` oraz `docs/QUICK_SETUP.md`. Starsza historia sprzed gałęzi 2.8.x pozostaje w `docs/CHANGELOG_ARCHIVE_PRE_2.8.0.md`.
 
 ## 2.8.27 — Dependency Documentation (2026-10-26)

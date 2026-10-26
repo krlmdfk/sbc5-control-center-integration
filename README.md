@@ -14,7 +14,7 @@
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[HACS Integration / Integracja HACS](https://github.com/krlmdfk/sbc5-control-center-integration)** · **[App Releases](https://github.com/krlmdfk/sbc5-control-center/releases)** · **[Integration Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases)**
 
-**Version 2.8.27 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 2.8.28 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -32,7 +32,7 @@ The required Raspberry Pi 5 host services are provided by the **SBC5 Control Cen
 
 ### Current release
 
-Dependency documentation release: clearly documents the required SBC5 App/runtime and the Mushroom, card-mod and ApexCharts Card frontend dependencies for the complete Lovelace dashboard. No cooling, AI, CPU/GPU or boot-configuration logic changes.
+Adds a complete first-installation guide and release automation. No runtime control logic changes.
 
 ### Repository relationship
 
@@ -106,7 +106,7 @@ Wymagane usługi hosta Raspberry Pi 5 zapewnia **SBC5 Control Center App/runtime
 
 ### Aktualne wydanie
 
-Wydanie dokumentacyjne zależności: czytelnie opisano wymaganą aplikację/runtime SBC5 oraz zależności interfejsu Mushroom, card-mod i ApexCharts Card potrzebne do kompletnego dashboardu Lovelace. Bez zmian logiki chłodzenia, AI, CPU/GPU ani konfiguracji boot.
+Dodaje kompletny przewodnik pierwszej instalacji i automatyzację wydań. Bez zmian logiki sterowania runtime.
 
 ### Relacja repozytoriów
 
