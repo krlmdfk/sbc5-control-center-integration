@@ -4,9 +4,9 @@
 
 > **App required / Aplikacja wymagana**
 >
-> Click the SBC5 logo above to open the required **SBC5 Control Center App/runtime** repository.
+> The SBC5 Control Center App/runtime must already be installed and running.
 >
-> Kliknij logo SBC5 powyżej, aby otworzyć repozytorium wymaganej **aplikacji/runtime SBC5 Control Center**.
+> Aplikacja/runtime SBC5 Control Center musi być wcześniej zainstalowana i uruchomiona.
 
 **[Main App / Główna aplikacja](https://github.com/krlmdfk/sbc5-control-center)** · **[Integration / Integracja](https://github.com/krlmdfk/sbc5-control-center-integration)**
 
@@ -14,17 +14,14 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 2.8.32
-
+**Version:** 3.0.0  
 **Home Assistant:** >= 2026.10.1
-
-**Requirement:** the **SBC5 Control Center App/runtime must already be installed and running**.
 
 The App provides Raspberry Pi 5 host telemetry and control services. This HACS integration exposes device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
 
-For the **complete SBC5 Lovelace dashboard**, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**. The native integration itself can operate without these frontend cards.
+Hybrid Rust Core generation with the proven compatibility/control plane retained for safety. The integration is aligned with App 3.0.0, preserved-state migration, Adaptive PWM/AI Cooling recovery, CPU/GPU profile reconciliation and the verified Raspberry Pi 5 release gate.
 
-Runtime robustness hotfix: guarantees writable runtime scratch storage, hardens AI qualification templates against partial telemetry, throttles repeated boot/config write warnings when Host Access is unavailable, and adds explicit Protection Mode/Host PID diagnostics. No Adaptive PWM, AI Cooling model/qualification, fan calibration, CPU/GPU profile, or boot-control algorithm changes.
+For the complete SBC5 Lovelace dashboard, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**.
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
@@ -34,16 +31,13 @@ Runtime robustness hotfix: guarantees writable runtime scratch storage, hardens 
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 2.8.32
-
+**Wersja:** 3.0.0  
 **Home Assistant:** >= 2026.10.1
-
-**Wymaganie:** **aplikacja/runtime SBC5 Control Center musi być wcześniej zainstalowana i uruchomiona**.
 
 Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. Integracja HACS udostępnia w Home Assistant informacje o urządzeniu, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
 
-Dla **kompletnego dashboardu Lovelace SBC5** zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**. Sama natywna integracja może działać bez tych kart frontendowych.
+Generacja z hybrydowym Rust Core i zachowaną, sprawdzoną warstwą sterowania bezpieczeństwem. Integracja jest wyrównana z aplikacją 3.0.0, migracją z zachowaniem stanu, odzyskiwaniem Adaptive PWM/AI Cooling, uzgadnianiem profili CPU/GPU oraz zweryfikowaną bramką wydania na Raspberry Pi 5.
 
-Hotfix odporności runtime: gwarantuje zapisywalny katalog roboczy runtime, zabezpiecza szablony kwalifikacji AI na niepełną telemetrię, ogranicza powtarzane komunikaty o niedostępnym config.txt i dodaje jawną diagnostykę Protection Mode/Host PID. Bez zmian Adaptive PWM, modelu/kwalifikacji AI Cooling, kalibracji wentylatora, profili CPU/GPU ani algorytmów sterowania boot.
+Dla kompletnego dashboardu Lovelace SBC5 zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**.
 
 **[Otwórz wymaganą aplikację SBC5 Control Center →](https://github.com/krlmdfk/sbc5-control-center)**
