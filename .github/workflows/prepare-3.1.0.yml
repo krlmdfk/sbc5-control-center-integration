@@ -1,0 +1,51 @@
+name: Prepare HACS 3.1.0 parity
+
+on:
+  push:
+    branches:
+      - release/3.1.0
+    paths:
+      - prepare_3_1_0_parity.py
+      - .github/workflows/prepare-3.1.0.yml
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/3.1.0
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply 3.1.0 parity
+        run: python prepare_3_1_0_parity.py
+      - name: Basic validation
+        run: |
+          python -m compileall -q custom_components/sbc5_control_center
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f -name '*.pyc' -delete
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('custom_components/sbc5_control_center/manifest.json').read_text())
+          assert m['version']=='3.1.0'
+          assert 'APP_VERSION = "3.1.0"' in Path('custom_components/sbc5_control_center/const.py').read_text()
+          assert '## 3.1.0 — 2026-10-27' in Path('CHANGELOG.md').read_text()
+          assert Path('RELEASE_NOTES_3.1.0.md').is_file()
+          PY
+          git diff --check
+      - name: Commit clean candidate
+        run: |
+          set -euo pipefail
+          git rm prepare_3_1_0_parity.py .github/workflows/prepare-3.1.0.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "SBC5 Control Center Integration 3.1.0 — version parity"
+          git push origin HEAD:release/3.1.0
