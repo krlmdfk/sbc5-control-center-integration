@@ -1,5 +1,12 @@
 # Changelog — SBC5 Control Center
 
+## 3.0.4 — 2026-10-27
+
+- Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.4.
+- Updated integration version metadata and bilingual current-state/release documentation.
+- No entity, coordinator, telemetry, repairs, update or Restart Manager behavior changes.
+- App/runtime 3.0.4 lowers steady-state Config.txt watchdog and AI relay polling overhead without changing cooling-control cadence.
+
 ## 3.0.3 — 2026-10-27
 
 - Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.3.

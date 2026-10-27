@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.0.3 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.0.4 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,9 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.0.3
+### Current release — 3.0.4
 
-Version-parity release aligned with SBC5 Control Center App/runtime 3.0.2. Integration behavior is unchanged from 3.0.1; the App/runtime release optimizes local update discovery and Supervisor profile reconciliation while preserving Adaptive PWM, AI Cooling and the verified 49°C boot curve.
+Version-parity release aligned with SBC5 Control Center App/runtime 3.0.4. Integration behavior remains unchanged; App/runtime 3.0.4 lowers steady-state Config.txt watchdog and AI relay polling overhead without changing Adaptive PWM, AI evaluator, realtime cooling, telemetry cadence or the verified 49°C boot curve.
 
 ### Capabilities
 
@@ -82,9 +82,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.0.3
+### Aktualne wydanie — 3.0.4
 
-Wydanie wyrównujące wersję integracji z aplikacją/runtime SBC5 Control Center 3.0.2. Zachowanie integracji pozostaje bez zmian względem 3.0.1; wydanie aplikacji/runtime optymalizuje wykrywanie lokalnych aktualizacji i uzgadnianie profili Supervisor bez zmian Adaptive PWM, AI Cooling i zweryfikowanej krzywej boot 49°C.
+Wydanie wyrównujące wersję integracji z aplikacją/runtime SBC5 Control Center 3.0.4. Zachowanie integracji pozostaje bez zmian; aplikacja/runtime 3.0.4 zmniejsza stałe obciążenie pollingiem Config.txt Manager i relay AI bez zmian Adaptive PWM, evaluatora AI, realtime cooling, telemetrii ani zweryfikowanej krzywej boot 49°C.
 
 ### Możliwości
 
