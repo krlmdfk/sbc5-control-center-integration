@@ -39,6 +39,10 @@ for path in (ROOT / "README.md", ROOT / "info.md"):
     text = text.replace("wyrównana z aplikacją 3.0.2", f"wyrównana z aplikacją {VERSION}")
     text = text.replace("wyrównana z aplikacją 3.0.1", f"wyrównana z aplikacją {VERSION}")
     text = text.replace("wyrównana z aplikacją 3.0.0", f"wyrównana z aplikacją {VERSION}")
+    had_final_newline = text.endswith("\n")
+    text = "\n".join(line.rstrip() for line in text.splitlines())
+    if had_final_newline:
+        text += "\n"
     path.write_text(text, encoding="utf-8")
 
 # Preserve all historical changelog lines and prepend only the new release entry.
@@ -61,7 +65,7 @@ if heading not in text:
 
 notes = ROOT / f"RELEASE_NOTES_{VERSION}.md"
 notes.write_text(
-    f"""# SBC5 Control Center Integration {VERSION}\n\n"
+    f"# SBC5 Control Center Integration {VERSION}\n\n"
     "## English\n\n"
     "### Highlights\n\n"
     f"- Aligned with SBC5 Control Center App/runtime **{VERSION}**.\n"
@@ -92,8 +96,7 @@ notes.write_text(
     "### Informacje o aktualizacji\n\n"
     "- Istniejąca konfiguracja integracji jest zachowywana przy standardowej aktualizacji HACS.\n"
     "- Po aktualizacji uruchom ponownie Home Assistant, gdy HACS tego wymaga.\n"
-    "- Sama aktualizacja integracji nie wymaga restartu hosta Raspberry Pi.\n"
-    """,
+    "- Sama aktualizacja integracji nie wymaga restartu hosta Raspberry Pi.\n",
     encoding="utf-8",
 )
 
