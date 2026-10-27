@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.5 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.6 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,9 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.5
+### Current release — 3.1.6
 
-Version 3.1.5 is aligned with SBC5 Control Center App/runtime 3.1.5. The integration adds native Thermal Predictor Shadow Assist telemetry: suggested PWM delta, hypothetical PWM, activation-gate state, decision reason and weighted forecast. Shadow Assist remains telemetry-only with `control_output_enabled=false`; Adaptive PWM and AI Cooling remain authoritative.
+Version 3.1.6 is aligned with SBC5 Control Center App/runtime 3.1.6. The App/runtime uses AI Thermal Predictor v2 with closed-loop target anchoring and bounded per-horizon online bias calibration. The integration continues to expose native forecast, MAE/quality and Shadow Assist telemetry through the existing 15-second coordinator. Shadow Assist remains telemetry-only with `control_output_enabled=false`; Adaptive PWM and AI Cooling remain authoritative.
 ### Capabilities
 
 | Area | Integration capability |
@@ -81,9 +81,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.5
+### Aktualne wydanie — 3.1.6
 
-Wersja 3.1.5 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.5. Integracja dodaje natywną telemetrię Thermal Predictor Shadow Assist: sugerowaną deltę PWM, hipotetyczny PWM, stan bramki aktywacji, powód decyzji i prognozę ważoną. Shadow Assist pozostaje wyłącznie telemetrią z `control_output_enabled=false`; Adaptive PWM i AI Cooling pozostają nadrzędne.
+Wersja 3.1.6 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.6. App/runtime używa AI Thermal Predictor v2 z dociąganiem prognozy do celu termicznego i ograniczoną korektą błędu online dla każdego horyzontu. Integracja nadal udostępnia natywne prognozy, MAE/jakość oraz telemetrię Shadow Assist przez istniejący 15-sekundowy koordynator. Shadow Assist pozostaje wyłącznie telemetrią z `control_output_enabled=false`; Adaptive PWM i AI Cooling pozostają nadrzędne.
 ### Możliwości
 
 | Obszar | Możliwości integracji |
