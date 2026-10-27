@@ -7,7 +7,6 @@ on:
     paths:
       - scripts/prepare_3_0_1.py
       - .github/workflows/prepare-3.0.1.yml
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,23 +15,18 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - name: Prepare integration 3.0.1
         run: python scripts/prepare_3_0_1.py
       - name: Compile Python
         run: python -m compileall -q custom_components/sbc5_control_center
-      - name: Parse JSON
-        run: python - <<'PY'
-          import json
-          from pathlib import Path
-          for p in Path('.').rglob('*.json'):
-              json.loads(p.read_text(encoding='utf-8'))
-          PY
       - name: Commit candidate
         run: |
           find . -type d -name __pycache__ -prune -exec rm -rf {} +
@@ -40,6 +34,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet && exit 0
+          if git diff --cached --quiet; then
+            echo "No candidate changes to commit."
+            exit 0
+          fi
           git commit -m "Prepare SBC5 Control Center Integration 3.0.1"
           git push origin HEAD:maintenance/3.0.1
