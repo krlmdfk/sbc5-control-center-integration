@@ -1,5 +1,35 @@
 ## 3.1.3 — 2026-10-27
 
+## 3.1.4 — 2026-10-27
+
+### English
+
+#### Added
+- Added native `SBC5 AI Thermal Predictor Quality` sensor sourced from the existing AI runtime relay.
+
+#### Fixed
+- Aligned HACS version metadata and current README release information with App/runtime 3.1.4.
+
+#### Performance
+- No new polling loop; the quality sensor reuses the existing 15-second coordinator and AI runtime relay.
+
+#### Upgrade notes
+- Update through HACS. Restart Home Assistant only if HACS requests it. No Raspberry Pi host restart is required.
+
+### Polski
+
+#### Dodano
+- Dodano natywny sensor `SBC5 AI Thermal Predictor Quality` korzystający z istniejącego relay AI runtime.
+
+#### Naprawiono
+- Wyrównano metadane wersji HACS i aktualne informacje w README z App/runtime 3.1.4.
+
+#### Wydajność
+- Bez nowej pętli odpytywania; sensor jakości korzysta z istniejącego 15-sekundowego koordynatora i relay AI runtime.
+
+#### Informacje o aktualizacji
+- Aktualizuj przez HACS. Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda. Restart hosta Raspberry Pi nie jest wymagany.
+
 ### English
 - Added native AI Thermal Predictor quality diagnostics: average MAE, per-horizon MAE, last error, temperature slope, validated sample count and data age.
 - Added explicit physical Raspberry Pi host MAC and interface sensors for Device Registry verification.

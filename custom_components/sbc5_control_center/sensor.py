@@ -109,6 +109,8 @@ SENSOR_SPECS: tuple[SensorSpec, ...] = (
     SensorSpec(unique_id="sbc5_ai_thermal_predictor_confidence", name="SBC5 AI Thermal Predictor Confidence",
                value_fn=lambda d: _predictor_number(d, "confidence_percent"), icon="mdi:brain",
                unit=PERCENTAGE, state_class=SensorStateClass.MEASUREMENT),
+    SensorSpec(unique_id="sbc5_ai_thermal_predictor_quality", name="SBC5 AI Thermal Predictor Quality",
+               value_fn=lambda d: d.thermal_predictor.get("quality_state") or None, icon="mdi:brain-check-outline"),
     SensorSpec(unique_id="sbc5_ai_thermal_predictor_mae", name="SBC5 AI Thermal Predictor Average MAE",
                value_fn=lambda d: _predictor_number(d, "average_mae_c"), icon="mdi:chart-bell-curve",
                unit=UnitOfTemperature.CELSIUS, state_class=SensorStateClass.MEASUREMENT),
