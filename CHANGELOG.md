@@ -1,5 +1,23 @@
 # Changelog — SBC5 Control Center
 
+## 3.1.2 — 2026-10-27
+
+### English
+
+- Added native AI Thermal Predictor sensors for +30 s, +60 s, +120 s and predictor confidence, using the existing AI runtime relay without a new polling loop.
+- Migrated the 3.1.1 package-template Predictor entity IDs to native integration ownership while preserving canonical entity IDs for Recorder continuity.
+- Fixed Raspberry Pi device identity reconciliation: accumulated stale App/container MAC connections are replaced with the single physical host MAC supplied by the App.
+- Aligned integration metadata with SBC5 Control Center App/runtime and Card UI 3.1.2.
+- No Raspberry Pi host restart is required; restart Home Assistant only when requested by HACS after the integration update.
+
+### Polski
+
+- Dodano natywne sensory AI Thermal Predictor dla +30 s, +60 s, +120 s oraz pewności predyktora, korzystające z istniejącego przekaźnika AI runtime bez nowej pętli odpytywania.
+- Zmigrowano identyfikatory encji Predictora z template package 3.1.1 do natywnej integracji przy zachowaniu kanonicznych entity_id dla ciągłości Recordera.
+- Naprawiono identyfikację urządzenia Raspberry Pi: nagromadzone stare adresy MAC aplikacji/kontenera są zastępowane pojedynczym fizycznym MAC hosta przekazanym przez aplikację.
+- Wyrównano metadane integracji z App/runtime i Card UI SBC5 Control Center 3.1.2.
+- Restart hosta Raspberry Pi nie jest wymagany; Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda po aktualizacji integracji.
+
 ## 3.1.1 — 2026-10-27
 
 - Aligned the HACS integration release with SBC5 Control Center App/runtime and Card UI 3.1.1.
