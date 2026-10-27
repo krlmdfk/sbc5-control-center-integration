@@ -5,6 +5,7 @@ on:
     branches:
       - maintenance/3.0.2
     paths:
+      - scripts/repair_changelog_3_0_2.py
       - .github/workflows/repair-changelog-3.0.2.yml
 
 permissions:
@@ -14,31 +15,15 @@ jobs:
   repair:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Restore full history and prepend 3.0.2
+      - name: Restore full CHANGELOG history
+        run: python scripts/repair_changelog_3_0_2.py
+      - name: Commit repaired CHANGELOG and remove one-shot tooling
         run: |
-          git fetch origin main
-          git show origin/main:CHANGELOG.md > CHANGELOG.md
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('CHANGELOG.md')
-          text=p.read_text(encoding='utf-8')
-          block='''## 3.0.2 — 2026-10-27
-
-- Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.2.
-- Updated integration version metadata and bilingual release/current-state documentation.
-- No entity, coordinator, telemetry, repairs, update or Restart Manager behavior changes.
-
-'''
-          title='# Changelog — SBC5 Control Center\n\n'
-          if not text.startswith(title):
-              raise SystemExit('unexpected CHANGELOG header')
-          if '## 3.0.2 — 2026-10-27' not in text:
-              text=title+block+text[len(title):]
-          p.write_text(text,encoding='utf-8')
-          PY
+          git rm scripts/repair_changelog_3_0_2.py
           git rm .github/workflows/repair-changelog-3.0.2.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
