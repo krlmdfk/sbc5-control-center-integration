@@ -1,5 +1,12 @@
 # Changelog — SBC5 Control Center
 
+## 3.1.1 — 2026-10-27
+
+- Aligned the HACS integration release with SBC5 Control Center App/runtime and Card UI 3.1.1.
+- Integration behavior is unchanged; 3.1.1 adds the responsive YAML/Lovelace AI Thermal Predictor presentation on the App/package side.
+- Preserved HACS ownership protection, existing entities, coordinator, telemetry, Repairs, update and Restart Manager behavior.
+- No Raspberry Pi host restart is required; restart Home Assistant only when requested by HACS.
+
 ## 3.1.0 — 2026-10-27
 
 - Aligned HACS integration metadata with SBC5 Control Center App/runtime 3.1.0.
