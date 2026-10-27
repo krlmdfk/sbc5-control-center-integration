@@ -1,0 +1,23 @@
+name: One-shot HACS release 3.1.2
+on:
+  push:
+    branches: [fix/3.1.2-native-predictor-device-identity]
+    paths: [.github/workflows/oneshot-release-3-1-2.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/3.1.2-native-predictor-device-identity
+          fetch-depth: 0
+      - run: python scripts/_oneshot_release_3_1_2.py
+      - run: python -m compileall -q custom_components/sbc5_control_center
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md CHANGELOG.md RELEASE_NOTES_3.1.2.md custom_components/sbc5_control_center/manifest.json custom_components/sbc5_control_center/const.py
+          git commit -m "release: prepare SBC5 integration 3.1.2"
+          git push origin HEAD:fix/3.1.2-native-predictor-device-identity
