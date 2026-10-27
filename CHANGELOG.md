@@ -1,5 +1,11 @@
 # Changelog — SBC5 Control Center
 
+## 3.0.1 — 2026-10-27
+
+- Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.1.
+- Updated integration version metadata and bilingual release documentation.
+- No entity, coordinator, telemetry, repairs, update or Restart Manager behavior changes.
+
 ## 2.8.32
 
 - Runtime robustness hotfix: guarantees writable runtime scratch storage, hardens AI qualification templates against partial telemetry, throttles repeated boot/config write warnings when Host Access is unavailable, and adds explicit Protection Mode/Host PID diagnostics. No Adaptive PWM, AI Cooling model/qualification, fan calibration, CPU/GPU profile, or boot-control algorithm changes.
