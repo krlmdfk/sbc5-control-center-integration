@@ -1,3 +1,19 @@
+## 3.1.5 — 2026-10-27
+
+### English
+- Added native Thermal Predictor Shadow Assist sensors for suggested PWM delta, hypothetical PWM, activation-gate state, decision reason and weighted forecast.
+- Aligned HACS integration metadata with App/runtime 3.1.5.
+- No new polling loop; Shadow Assist reuses the existing 15-second coordinator and AI runtime relay.
+- Shadow Assist is telemetry-only (`control_output_enabled=false`); Adaptive PWM and AI Cooling remain authoritative.
+- Update through HACS. Restart Home Assistant only if HACS requests it. No Raspberry Pi host restart is required.
+
+### Polski
+- Dodano natywne sensory Thermal Predictor Shadow Assist: sugerowana delta PWM, hipotetyczny PWM, stan bramki aktywacji, powód decyzji i prognoza ważona.
+- Wyrównano metadane integracji HACS z App/runtime 3.1.5.
+- Bez nowej pętli pollingowej; Shadow Assist korzysta z istniejącego 15-sekundowego koordynatora i relay AI runtime.
+- Shadow Assist jest wyłącznie telemetrią (`control_output_enabled=false`); Adaptive PWM i AI Cooling pozostają nadrzędne.
+- Aktualizuj przez HACS. Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda. Restart hosta Raspberry Pi nie jest wymagany.
+
 ## 3.1.3 — 2026-10-27
 
 ## 3.1.4 — 2026-10-27
