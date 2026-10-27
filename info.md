@@ -14,7 +14,7 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 3.0.2  
+**Version:** 3.0.3
 **Home Assistant:** >= 2026.10.1
 
 The App provides Raspberry Pi 5 host telemetry and control services. This HACS integration exposes device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
@@ -31,7 +31,7 @@ For the complete SBC5 Lovelace dashboard, also install through HACS: **Mushroom*
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 3.0.2  
+**Wersja:** 3.0.3
 **Home Assistant:** >= 2026.10.1
 
 Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. Integracja HACS udostępnia w Home Assistant informacje o urządzeniu, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
