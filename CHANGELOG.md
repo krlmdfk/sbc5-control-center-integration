@@ -1,5 +1,11 @@
 # Changelog — SBC5 Control Center
 
+## 3.0.2 — 2026-10-27
+
+- Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.2.
+- Updated integration version metadata and bilingual release/current-state documentation.
+- No entity, coordinator, telemetry, repairs, update or Restart Manager behavior changes.
+
 ## 3.0.1 — 2026-10-27
 
 - Aligned the HACS integration release with SBC5 Control Center App/runtime 3.0.1.

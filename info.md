@@ -14,12 +14,12 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 3.0.1  
+**Version:** 3.0.2  
 **Home Assistant:** >= 2026.10.1
 
 The App provides Raspberry Pi 5 host telemetry and control services. This HACS integration exposes device information, telemetry, diagnostics, update state and Restart Manager entities in Home Assistant.
 
-Hybrid Rust Core generation with the proven compatibility/control plane retained for safety. The integration is aligned with App 3.0.0, preserved-state migration, Adaptive PWM/AI Cooling recovery, CPU/GPU profile reconciliation and the verified Raspberry Pi 5 release gate.
+The integration is aligned with App/runtime 3.0.2. This release keeps integration behavior unchanged while restoring version parity with the runtime efficiency hotfix in the main App.
 
 For the complete SBC5 Lovelace dashboard, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**.
 
@@ -31,12 +31,12 @@ For the complete SBC5 Lovelace dashboard, also install through HACS: **Mushroom*
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 3.0.0  
+**Wersja:** 3.0.2  
 **Home Assistant:** >= 2026.10.1
 
 Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. Integracja HACS udostępnia w Home Assistant informacje o urządzeniu, telemetrię, diagnostykę, stan aktualizacji oraz encje Restart Managera.
 
-Generacja z hybrydowym Rust Core i zachowaną, sprawdzoną warstwą sterowania bezpieczeństwem. Integracja jest wyrównana z aplikacją 3.0.0, migracją z zachowaniem stanu, odzyskiwaniem Adaptive PWM/AI Cooling, uzgadnianiem profili CPU/GPU oraz zweryfikowaną bramką wydania na Raspberry Pi 5.
+Integracja jest wyrównana z aplikacją/runtime 3.0.2. To wydanie nie zmienia zachowania integracji i przywraca zgodność wersji z hotfixem wydajności głównej aplikacji.
 
 Dla kompletnego dashboardu Lovelace SBC5 zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**.
 

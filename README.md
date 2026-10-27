@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.0.1 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.0.2 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,9 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.0.0
+### Current release — 3.0.2
 
-Hybrid Rust Core generation with the proven compatibility/control plane retained for safety. The integration is aligned with App 3.0.0, preserved-state migration, Adaptive PWM/AI Cooling recovery, CPU/GPU profile reconciliation, Card UI synchronization and the verified Raspberry Pi 5 release gate.
+Version-parity release aligned with SBC5 Control Center App/runtime 3.0.2. Integration behavior is unchanged from 3.0.1; the App/runtime release optimizes local update discovery and Supervisor profile reconciliation while preserving Adaptive PWM, AI Cooling and the verified 49°C boot curve.
 
 ### Capabilities
 
@@ -82,9 +82,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.0.0
+### Aktualne wydanie — 3.0.2
 
-Generacja z hybrydowym Rust Core i zachowaną, sprawdzoną warstwą sterowania bezpieczeństwem. Integracja jest wyrównana z aplikacją 3.0.0, migracją z zachowaniem stanu, odzyskiwaniem Adaptive PWM/AI Cooling, uzgadnianiem profili CPU/GPU, synchronizacją Card UI oraz zweryfikowaną bramką wydania na Raspberry Pi 5.
+Wydanie wyrównujące wersję integracji z aplikacją/runtime SBC5 Control Center 3.0.2. Zachowanie integracji pozostaje bez zmian względem 3.0.1; wydanie aplikacji/runtime optymalizuje wykrywanie lokalnych aktualizacji i uzgadnianie profili Supervisor bez zmian Adaptive PWM, AI Cooling i zweryfikowanej krzywej boot 49°C.
 
 ### Możliwości
 
