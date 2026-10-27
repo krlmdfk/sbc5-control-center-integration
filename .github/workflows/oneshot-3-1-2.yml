@@ -1,0 +1,31 @@
+name: One-shot 3.1.2 integration patch
+
+on:
+  push:
+    branches:
+      - fix/3.1.2-native-predictor-device-identity
+    paths:
+      - .github/workflows/oneshot-3-1-2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/3.1.2-native-predictor-device-identity
+          fetch-depth: 0
+      - name: Apply patch
+        run: python scripts/_oneshot_patch_3_1_2.py
+      - name: Compile integration
+        run: python -m compileall -q custom_components/sbc5_control_center
+      - name: Commit behavior fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add custom_components/sbc5_control_center/coordinator.py custom_components/sbc5_control_center/sensor.py custom_components/sbc5_control_center/__init__.py
+          git commit -m "fix: expose native thermal predictor and reconcile device MAC"
+          git push origin HEAD:fix/3.1.2-native-predictor-device-identity
