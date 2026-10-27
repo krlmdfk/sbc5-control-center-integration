@@ -33,3 +33,4 @@ jobs:
           git rm .github/workflows/prepare-3.0.3.yml scripts/prepare_3_0_3.py
           git commit -m "Prepare SBC5 Control Center Integration 3.0.3"
           git push origin HEAD:maintenance/3.0.3
+# retry after generator whitespace normalization
