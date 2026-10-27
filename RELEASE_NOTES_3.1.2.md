@@ -16,6 +16,12 @@
 - Restart Home Assistant only when requested by HACS.
 - No Raspberry Pi host restart is required by this release.
 
+### Post-update verification
+
+- Confirm the SBC5 device reports software version 3.1.2.
+- Confirm the AI section exposes +30 s, +60 s and +120 s thermal forecasts plus predictor confidence.
+- Confirm the SBC5 device network connections are reduced to the verified physical Raspberry Pi host MAC.
+
 ## Polski
 
 ### Najważniejsze zmiany
@@ -31,3 +37,9 @@
 - Integrację towarzyszącą zaktualizuj do 3.1.2 przez HACS.
 - Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda.
 - To wydanie nie wymaga restartu hosta Raspberry Pi.
+
+### Weryfikacja po aktualizacji
+
+- Potwierdź, że urządzenie SBC5 raportuje wersję oprogramowania 3.1.2.
+- Potwierdź, że sekcja AI pokazuje prognozy temperatury +30 s, +60 s i +120 s oraz pewność predyktora.
+- Potwierdź, że połączenia sieciowe urządzenia SBC5 zostały ograniczone do zweryfikowanego fizycznego adresu MAC hosta Raspberry Pi.
