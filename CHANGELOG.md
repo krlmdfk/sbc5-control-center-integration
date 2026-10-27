@@ -1,3 +1,19 @@
+## 3.1.6 — 2026-10-27
+
+### English
+- Aligned HACS integration metadata with SBC5 Control Center App/runtime 3.1.6.
+- Documented AI Thermal Predictor v2 closed-loop target anchoring and bounded per-horizon online bias calibration delivered by the App/runtime.
+- Preserved existing native forecast, MAE/quality and Shadow Assist entities; no coordinator or polling changes.
+- Shadow Assist remains telemetry-only (`control_output_enabled=false`); Adaptive PWM and AI Cooling remain authoritative.
+- Update through HACS. Restart Home Assistant only if HACS requests it. No Raspberry Pi host restart is required.
+
+### Polski
+- Wyrównano metadane integracji HACS z App/runtime SBC5 Control Center 3.1.6.
+- Udokumentowano AI Thermal Predictor v2 z dociąganiem do celu termicznego i ograniczoną korektą błędu online dla każdego horyzontu realizowaną przez App/runtime.
+- Zachowano istniejące natywne encje prognoz, MAE/jakości i Shadow Assist; bez zmian koordynatora i pollingu.
+- Shadow Assist pozostaje wyłącznie telemetrią (`control_output_enabled=false`); Adaptive PWM i AI Cooling pozostają nadrzędne.
+- Aktualizuj przez HACS. Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda. Restart hosta Raspberry Pi nie jest wymagany.
+
 ## 3.1.5 — 2026-10-27
 
 ### English
