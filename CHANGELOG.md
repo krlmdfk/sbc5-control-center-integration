@@ -1,3 +1,17 @@
+## 3.1.3 — 2026-10-27
+
+### English
+- Added native AI Thermal Predictor quality diagnostics: average MAE, per-horizon MAE, last error, temperature slope, validated sample count and data age.
+- Added explicit physical Raspberry Pi host MAC and interface sensors for Device Registry verification.
+- Reuses the existing SBC5 coordinator and AI runtime relay; no new high-frequency polling loop.
+- Aligned integration metadata with SBC5 Control Center App/runtime and Card UI 3.1.3.
+
+### Polski
+- Dodano natywną diagnostykę jakości AI Thermal Predictor: średnie MAE, MAE dla horyzontów, ostatni błąd, trend temperatury, liczbę zweryfikowanych prognoz i wiek danych.
+- Dodano jawne sensory fizycznego MAC i interfejsu hosta Raspberry Pi do weryfikacji Device Registry.
+- Wykorzystano istniejący koordynator SBC5 i relay AI runtime; bez nowej szybkiej pętli odpytywania.
+- Wyrównano metadane integracji z App/runtime i Card UI SBC5 Control Center 3.1.3.
+
 # Changelog — SBC5 Control Center
 
 ## 3.1.2 — 2026-10-27
