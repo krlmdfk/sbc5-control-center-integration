@@ -1,0 +1,134 @@
+name: One-shot HACS 3.1.5 Shadow Assist parity
+
+on:
+  push:
+    branches:
+      - release/3.1.5-shadow-assist
+
+permissions:
+  contents: write
+
+jobs:
+  parity:
+    if: ${{ !contains(github.event.head_commit.message, '[hacs-3.1.5]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/3.1.5-shadow-assist
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sync canonical sensor platform
+        run: |
+          curl -fsSL 'https://raw.githubusercontent.com/krlmdfk/sbc5-control-center/feature/3.1.5-thermal-predictor-shadow-assist/custom_components/sbc5_control_center/sensor.py' \
+            -o custom_components/sbc5_control_center/sensor.py
+      - name: Prepare HACS 3.1.5 metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = Path('custom_components/sbc5_control_center/manifest.json')
+          data = json.loads(manifest.read_text())
+          data['version'] = '3.1.5'
+          manifest.write_text(json.dumps(data, indent=2) + '\n')
+
+          const = Path('custom_components/sbc5_control_center/const.py')
+          text = const.read_text()
+          text = text.replace('APP_VERSION = "3.1.4"', 'APP_VERSION = "3.1.5"', 1)
+          const.write_text(text)
+
+          readme = Path('README.md')
+          text = readme.read_text()
+          text = text.replace('**Version 3.1.4 · HACS-ready', '**Version 3.1.5 · HACS-ready', 1)
+          text = text.replace('### Current release — 3.1.4', '### Current release — 3.1.5', 1)
+          text = text.replace('Version 3.1.4 is aligned with SBC5 Control Center App/runtime 3.1.4. The integration exposes native AI Thermal Predictor forecast and quality diagnostics, including MAE, last error, confidence, quality state, temperature slope, validated samples and data age. Raspberry Pi host MAC/interface diagnostics remain available for Device Registry verification. Adaptive PWM and AI Cooling control behavior is unchanged.', 'Version 3.1.5 is aligned with SBC5 Control Center App/runtime 3.1.5. The integration adds native Thermal Predictor Shadow Assist telemetry: suggested PWM delta, hypothetical PWM, activation-gate state, decision reason and weighted forecast. Shadow Assist remains telemetry-only with control_output_enabled=false; Adaptive PWM and AI Cooling remain authoritative.', 1)
+          text = text.replace('### Aktualne wydanie — 3.1.4', '### Aktualne wydanie — 3.1.5', 1)
+          text = text.replace('Wersja 3.1.4 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.4. Integracja udostępnia natywne sensory prognozy i jakości AI Thermal Predictor, w tym MAE, ostatni błąd, confidence, stan jakości, trend temperatury, liczbę zweryfikowanych prognoz i wiek danych. Diagnostyka fizycznego MAC/interfejsu Raspberry Pi pozostaje dostępna do weryfikacji Device Registry. Sterowanie Adaptive PWM i AI Cooling pozostaje bez zmian.', 'Wersja 3.1.5 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.5. Integracja dodaje natywną telemetrię Thermal Predictor Shadow Assist: sugerowaną deltę PWM, hipotetyczny PWM, stan bramki aktywacji, powód decyzji i prognozę ważoną. Shadow Assist pozostaje wyłącznie telemetrią z control_output_enabled=false; Adaptive PWM i AI Cooling pozostają nadrzędne.', 1)
+          readme.write_text(text)
+
+          changelog = Path('CHANGELOG.md')
+          old = changelog.read_text()
+          entry = '''## 3.1.5 — 2026-10-27
+
+### English
+
+#### Added
+- Added native Thermal Predictor Shadow Assist sensors for suggested PWM delta, hypothetical PWM, activation-gate state, decision reason and weighted forecast.
+
+#### Changed
+- Aligned HACS integration metadata with App/runtime 3.1.5 Shadow Assist.
+
+#### Performance
+- No new polling loop; Shadow Assist telemetry reuses the existing 15-second coordinator and AI runtime relay.
+
+#### Safety
+- Shadow Assist is telemetry-only (`control_output_enabled=false`). Adaptive PWM and AI Cooling remain authoritative and physical fan control is unchanged.
+
+#### Upgrade notes
+- Update through HACS. Restart Home Assistant only if HACS requests it. No Raspberry Pi host restart is required.
+
+### Polski
+
+#### Dodano
+- Dodano natywne sensory Thermal Predictor Shadow Assist: sugerowana delta PWM, hipotetyczny PWM, stan bramki aktywacji, powód decyzji i prognoza ważona.
+
+#### Zmieniono
+- Wyrównano metadane integracji HACS z App/runtime 3.1.5 Shadow Assist.
+
+#### Wydajność
+- Bez nowej pętli pollingowej; telemetria Shadow Assist korzysta z istniejącego 15-sekundowego koordynatora i relay AI runtime.
+
+#### Bezpieczeństwo
+- Shadow Assist jest wyłącznie telemetrią (`control_output_enabled=false`). Adaptive PWM i AI Cooling pozostają nadrzędne, a fizyczne sterowanie wentylatorem jest bez zmian.
+
+#### Informacje o aktualizacji
+- Aktualizuj przez HACS. Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda. Restart hosta Raspberry Pi nie jest wymagany.
+
+'''
+          changelog.write_text(entry + old)
+
+          Path('RELEASE_NOTES_3.1.5.md').write_text('''# SBC5 Control Center Integration 3.1.5
+
+## English
+
+### Highlights
+- Adds native AI Thermal Predictor Shadow Assist telemetry for the App/runtime 3.1.5 validation stage.
+- Exposes suggested PWM delta, hypothetical PWM, activation-gate state, decision reason and weighted 30/60/120-second forecast.
+- Shadow Assist does not control the fan: `control_output_enabled=false` and Adaptive PWM + AI Cooling remain authoritative.
+- No additional polling; the existing 15-second coordinator and AI runtime relay are reused.
+
+### Update
+Update this integration through HACS. Restart Home Assistant only if HACS requests it. Do not reboot the Raspberry Pi host for this integration update.
+
+---
+
+## Polski
+
+### Najważniejsze zmiany
+- Dodaje natywną telemetrię AI Thermal Predictor Shadow Assist dla etapu walidacyjnego App/runtime 3.1.5.
+- Udostępnia sugerowaną deltę PWM, hipotetyczny PWM, stan bramki aktywacji, powód decyzji i ważoną prognozę 30/60/120 s.
+- Shadow Assist nie steruje wentylatorem: `control_output_enabled=false`, a Adaptive PWM + AI Cooling pozostają nadrzędne.
+- Bez dodatkowego pollingu; wykorzystany jest istniejący 15-sekundowy koordynator i relay AI runtime.
+
+### Aktualizacja
+Aktualizuj integrację przez HACS. Home Assistant uruchom ponownie tylko wtedy, gdy HACS tego zażąda. Ta aktualizacja nie wymaga restartu hosta Raspberry Pi.
+''')
+          PY
+      - name: Validate syntax and parity
+        run: |
+          python -m compileall -q custom_components/sbc5_control_center
+          grep -q '"version": "3.1.5"' custom_components/sbc5_control_center/manifest.json
+          grep -q 'APP_VERSION = "3.1.5"' custom_components/sbc5_control_center/const.py
+          grep -q 'sbc5_ai_thermal_shadow_delta' custom_components/sbc5_control_center/sensor.py
+          grep -q 'sbc5_ai_thermal_shadow_state' custom_components/sbc5_control_center/sensor.py
+      - name: Commit parity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A ':!.github/workflows/_oneshot_3_1_5.yml'
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'SBC5 Control Center Integration 3.1.5 — Shadow Assist parity [hacs-3.1.5]'
+          git push origin HEAD:release/3.1.5-shadow-assist
