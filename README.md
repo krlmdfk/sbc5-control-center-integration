@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.0.4 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.0 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,9 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.0.4
+### Current release — 3.1.0
 
-Version-parity release aligned with SBC5 Control Center App/runtime 3.0.4. Integration behavior remains unchanged; App/runtime 3.0.4 lowers steady-state Config.txt watchdog and AI relay polling overhead without changing Adaptive PWM, AI evaluator, realtime cooling, telemetry cadence or the verified 49°C boot curve.
+Version 3.1.0 is aligned with SBC5 Control Center App/runtime 3.1.0. The integration exposes the runtime and AI surfaces used by the observe-only AI Thermal Predictor, while Adaptive PWM and AI Cooling remain authoritative. Recorder-friendly 30/60/120-second thermal forecast and confidence sensors are provided by the SBC5 package.
 
 ### Capabilities
 
@@ -82,9 +82,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.0.4
+### Aktualne wydanie — 3.1.0
 
-Wydanie wyrównujące wersję integracji z aplikacją/runtime SBC5 Control Center 3.0.4. Zachowanie integracji pozostaje bez zmian; aplikacja/runtime 3.0.4 zmniejsza stałe obciążenie pollingiem Config.txt Manager i relay AI bez zmian Adaptive PWM, evaluatora AI, realtime cooling, telemetrii ani zweryfikowanej krzywej boot 49°C.
+Wersja 3.1.0 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.0. Integracja udostępnia powierzchnie runtime i AI wykorzystywane przez obserwacyjny AI Thermal Predictor, a Adaptive PWM i AI Cooling pozostają nadrzędne. Sensory prognozy termicznej 30/60/120 s oraz confidence przyjazne Recorderowi są dostarczane przez pakiet SBC5.
 
 ### Możliwości
 
