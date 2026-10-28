@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.8 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.9 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,11 +36,11 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.8
+### Current release — 3.1.9
 
-Version 3.1.8 is aligned with SBC5 Control Center App/runtime 3.1.8. The App/runtime uses AI Cooling v5 hierarchical continuous learning: the proven bucket-aware learner remains responsible for direct qualified learning, while a conservative global continuous-load model lets sparse `medium` and `high` workload ranges benefit from transferable evidence. Short real-world CPU bursts can contribute bounded low-weight evidence without requiring long synthetic sustained load. Mature direct bucket models remain authoritative.
+Version 3.1.9 is aligned with SBC5 Control Center App/runtime 3.1.9. This integration release keeps the existing entity/coordinator behavior unchanged and provides version parity required by the App/runtime Restart Manager HACS handoff. When HACS already owns and has installed the matching bridge version, the App/runtime can avoid creating a second duplicate restart Repair while still tracking whether Home Assistant Core has reloaded the package.
 
-The integration continues to expose native AI Cooling state, Thermal Predictor forecasts, confidence, MAE/quality diagnostics and Shadow Assist telemetry through the existing coordinator. It adds no new polling loop and does not own physical PWM control.
+AI Cooling v5 hierarchical continuous learning, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
 
 ### Capabilities
 
@@ -85,11 +85,11 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.8
+### Aktualne wydanie — 3.1.9
 
-Wersja 3.1.8 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.8. App/runtime używa AI Cooling v5 z hierarchicznym ciągłym uczeniem: sprawdzony learner bucket-aware nadal odpowiada za bezpośrednie kwalifikowane uczenie, a konserwatywny globalny model ciągłego obciążenia pozwala rzadkim zakresom `medium` i `high` korzystać z transferu wiedzy. Krótkie rzeczywiste skoki CPU mogą wnosić dane o ograniczonej wadze bez potrzeby długiego sztucznego obciążenia. Dojrzałe bezpośrednie modele bucketów pozostają nadrzędne.
+Wersja 3.1.9 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.9. Ta wersja integracji zachowuje dotychczasowe encje i zachowanie koordynatora, a zapewnia zgodność wersji potrzebną do poprawnego handoffu Restart Managera z HACS. Gdy HACS zarządza integracją i ma już zainstalowaną zgodną wersję bridge, App/runtime może nie tworzyć drugiego, zduplikowanego Repair, zachowując jednocześnie informację, czy Home Assistant Core przeładował już package.
 
-Integracja nadal udostępnia natywny stan AI Cooling, prognozy Thermal Predictor, pewność, diagnostykę MAE/jakości oraz telemetrię Shadow Assist przez istniejący koordynator. Nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
+AI Cooling v5 z hierarchicznym ciągłym uczeniem, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
 ### Możliwości
 
