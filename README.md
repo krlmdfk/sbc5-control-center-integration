@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.9 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.10 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,11 +36,13 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.9
+### Current release — 3.1.10
 
-Version 3.1.9 is aligned with SBC5 Control Center App/runtime 3.1.9. This integration release keeps the existing entity/coordinator behavior unchanged and provides version parity required by the App/runtime Restart Manager HACS handoff. When HACS already owns and has installed the matching bridge version, the App/runtime can avoid creating a second duplicate restart Repair while still tracking whether Home Assistant Core has reloaded the package.
+Version 3.1.10 is aligned with SBC5 Control Center App/runtime 3.1.10. The App/runtime now exposes AI Cooling v5 hierarchical observability for direct, global and effective confidence/prediction, transfer source and effective model coverage through the existing AI runtime relay and dashboard. This makes sparse `medium` and `high` workload learning easier to inspect without changing the AI learning algorithm or physical cooling control.
 
-AI Cooling v5 hierarchical continuous learning, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
+The integration keeps the existing entities, coordinator behavior and polling cadence unchanged. Version parity also preserves the Restart Manager HACS handoff introduced in 3.1.9, allowing the App/runtime to recognize the current HACS-owned bridge and avoid duplicate restart Repairs.
+
+AI Cooling v5, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
 
 ### Capabilities
 
@@ -85,11 +87,13 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.9
+### Aktualne wydanie — 3.1.10
 
-Wersja 3.1.9 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.9. Ta wersja integracji zachowuje dotychczasowe encje i zachowanie koordynatora, a zapewnia zgodność wersji potrzebną do poprawnego handoffu Restart Managera z HACS. Gdy HACS zarządza integracją i ma już zainstalowaną zgodną wersję bridge, App/runtime może nie tworzyć drugiego, zduplikowanego Repair, zachowując jednocześnie informację, czy Home Assistant Core przeładował już package.
+Wersja 3.1.10 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.10. App/runtime udostępnia teraz pełniejszą obserwowalność hierarchicznego AI Cooling v5: bezpośrednią, globalną i efektywną pewność/predykcję, źródło transferu oraz efektywne pokrycie modelu przez istniejący relay AI i dashboard. Pozwala to oceniać uczenie rzadkich zakresów `medium` i `high` bez zmiany algorytmu uczenia AI ani fizycznego sterowania chłodzeniem.
 
-AI Cooling v5 z hierarchicznym ciągłym uczeniem, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
+Integracja zachowuje dotychczasowe encje, zachowanie koordynatora oraz częstotliwość pollingu. Zgodność wersji zachowuje również handoff Restart Managera z HACS wprowadzony w 3.1.9, dzięki czemu App/runtime rozpoznaje bieżący bridge zarządzany przez HACS i nie tworzy zduplikowanego Repair restartu.
+
+AI Cooling v5, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
 ### Możliwości
 
