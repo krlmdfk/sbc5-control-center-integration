@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.10 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.15 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,13 +36,11 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.10
+### Current release — 3.1.15
 
-Version 3.1.10 is aligned with SBC5 Control Center App/runtime 3.1.10. The App/runtime now exposes AI Cooling v5 hierarchical observability for direct, global and effective confidence/prediction, transfer source and effective model coverage through the existing AI runtime relay and dashboard. This makes sparse `medium` and `high` workload learning easier to inspect without changing the AI learning algorithm or physical cooling control.
+Version 3.1.15 is aligned with SBC5 Control Center App/runtime 3.1.15. The App/runtime fixes Card UI diagnostics for sparse AI workload buckets so direct confidence is no longer substituted with effective/general confidence, and missing direct PWM prediction is displayed explicitly as unavailable.
 
-The integration keeps the existing entities, coordinator behavior and polling cadence unchanged. Version parity also preserves the Restart Manager HACS handoff introduced in 3.1.9, allowing the App/runtime to recognize the current HACS-owned bridge and avoid duplicate restart Repairs.
-
-AI Cooling v5, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
+The integration keeps the existing entities, coordinator behavior and polling cadence unchanged. AI Cooling v5.1, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
 
 ### Capabilities
 
@@ -70,10 +68,10 @@ AI Cooling v5, Thermal Predictor, Adaptive PWM and physical fan control remain i
 2. Open **HACS → Integrations**.
 3. Add `https://github.com/krlmdfk/sbc5-control-center-integration` as a custom **Integration** repository if needed.
 4. Install or update **SBC5 Control Center**.
-5. Restart Home Assistant when requested by HACS.
+5. Restart Home Assistant after the integration update so Core loads the new version.
 6. Open **Settings → Devices & services** and add SBC5 Control Center if it is not already configured.
 
-The integration update itself does not require a Raspberry Pi host reboot. A Home Assistant restart may be requested by HACS after updating the custom integration.
+The integration update itself does not require a Raspberry Pi host reboot.
 
 ### HACS ownership protection
 
@@ -87,13 +85,11 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.10
+### Aktualne wydanie — 3.1.15
 
-Wersja 3.1.10 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.10. App/runtime udostępnia teraz pełniejszą obserwowalność hierarchicznego AI Cooling v5: bezpośrednią, globalną i efektywną pewność/predykcję, źródło transferu oraz efektywne pokrycie modelu przez istniejący relay AI i dashboard. Pozwala to oceniać uczenie rzadkich zakresów `medium` i `high` bez zmiany algorytmu uczenia AI ani fizycznego sterowania chłodzeniem.
+Wersja 3.1.15 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.15. App/runtime naprawia diagnostykę Card UI dla rzadkich bucketów obciążenia AI: pewność direct nie jest już zastępowana wartością effective/ogólną, a brak bezpośredniej predykcji PWM jest jednoznacznie prezentowany jako niedostępny.
 
-Integracja zachowuje dotychczasowe encje, zachowanie koordynatora oraz częstotliwość pollingu. Zgodność wersji zachowuje również handoff Restart Managera z HACS wprowadzony w 3.1.9, dzięki czemu App/runtime rozpoznaje bieżący bridge zarządzany przez HACS i nie tworzy zduplikowanego Repair restartu.
-
-AI Cooling v5, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
+Integracja zachowuje dotychczasowe encje, zachowanie koordynatora oraz częstotliwość pollingu. AI Cooling v5.1, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
 ### Możliwości
 
@@ -121,10 +117,10 @@ AI Cooling v5, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylat
 2. Otwórz **HACS → Integrations**.
 3. W razie potrzeby dodaj `https://github.com/krlmdfk/sbc5-control-center-integration` jako niestandardowe repozytorium typu **Integration**.
 4. Zainstaluj lub zaktualizuj **SBC5 Control Center**.
-5. Uruchom ponownie Home Assistant, gdy HACS tego zażąda.
+5. Po aktualizacji integracji uruchom ponownie Home Assistant, aby Core wczytał nową wersję.
 6. Otwórz **Ustawienia → Urządzenia i usługi** i dodaj SBC5 Control Center, jeśli nie jest jeszcze skonfigurowany.
 
-Sama aktualizacja integracji nie wymaga restartu hosta Raspberry Pi. Po aktualizacji niestandardowej integracji HACS może poprosić o restart Home Assistant.
+Sama aktualizacja integracji nie wymaga restartu hosta Raspberry Pi.
 
 ### Ochrona własności HACS
 
