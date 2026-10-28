@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.7 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.8 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,11 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.7
+### Current release — 3.1.8
 
-Version 3.1.7 is aligned with SBC5 Control Center App/runtime 3.1.7. The App/runtime uses bucket-aware AI Cooling qualification for workload-specific learning and an upward-only Adaptive PWM thermal fast path for large positive thermal excursions. The integration continues to expose native AI Cooling state, Thermal Predictor forecasts, MAE/quality diagnostics and Shadow Assist telemetry through the existing coordinator. It adds no new polling loop and does not own physical PWM control.
+Version 3.1.8 is aligned with SBC5 Control Center App/runtime 3.1.8. The App/runtime uses AI Cooling v5 hierarchical continuous learning: the proven bucket-aware learner remains responsible for direct qualified learning, while a conservative global continuous-load model lets sparse `medium` and `high` workload ranges benefit from transferable evidence. Short real-world CPU bursts can contribute bounded low-weight evidence without requiring long synthetic sustained load. Mature direct bucket models remain authoritative.
+
+The integration continues to expose native AI Cooling state, Thermal Predictor forecasts, confidence, MAE/quality diagnostics and Shadow Assist telemetry through the existing coordinator. It adds no new polling loop and does not own physical PWM control.
 
 ### Capabilities
 
@@ -83,9 +85,11 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.7
+### Aktualne wydanie — 3.1.8
 
-Wersja 3.1.7 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.7. App/runtime używa kwalifikacji AI Cooling zależnej od bucketa dla uczenia dopasowanego do obciążenia oraz thermal fast path Adaptive PWM wyłącznie w górę przy dużych dodatnich odchyleniach temperatury. Integracja nadal udostępnia natywny stan AI Cooling, prognozy Thermal Predictor, diagnostykę MAE/jakości oraz telemetrię Shadow Assist przez istniejący koordynator. Nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
+Wersja 3.1.8 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.8. App/runtime używa AI Cooling v5 z hierarchicznym ciągłym uczeniem: sprawdzony learner bucket-aware nadal odpowiada za bezpośrednie kwalifikowane uczenie, a konserwatywny globalny model ciągłego obciążenia pozwala rzadkim zakresom `medium` i `high` korzystać z transferu wiedzy. Krótkie rzeczywiste skoki CPU mogą wnosić dane o ograniczonej wadze bez potrzeby długiego sztucznego obciążenia. Dojrzałe bezpośrednie modele bucketów pozostają nadrzędne.
+
+Integracja nadal udostępnia natywny stan AI Cooling, prognozy Thermal Predictor, pewność, diagnostykę MAE/jakości oraz telemetrię Shadow Assist przez istniejący koordynator. Nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
 ### Możliwości
 
