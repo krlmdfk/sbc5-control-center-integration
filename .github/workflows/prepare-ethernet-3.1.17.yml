@@ -18,63 +18,26 @@ jobs:
           ref: feat/ethernet-eee-stability-3.1.17
           fetch-depth: 0
 
-      - name: Sync validated integration runtime from main project branch
+      - name: Sync validated integration runtime from SBC5 app branch
         run: |
+          set -euo pipefail
           base="https://raw.githubusercontent.com/krlmdfk/sbc5-control-center/feat/ethernet-eee-stability-3.1.17/custom_components/sbc5_control_center"
-          curl -fsSL "$base/coordinator.py" -o custom_components/sbc5_control_center/coordinator.py
-          curl -fsSL "$base/sensor.py" -o custom_components/sbc5_control_center/sensor.py
-          curl -fsSL "$base/const.py" -o custom_components/sbc5_control_center/const.py
-          curl -fsSL "$base/manifest.json" -o custom_components/sbc5_control_center/manifest.json
+          for file in coordinator.py sensor.py const.py manifest.json; do
+            curl -fsSL "$base/$file" -o "custom_components/sbc5_control_center/$file"
+          done
 
-      - name: Write bilingual release notes and changelog
+      - name: Verify expected 3.1.17 Ethernet entities
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          version = '3.1.17'
-          notes = '''# SBC5 Control Center Integration 3.1.17
+          python -m compileall -q custom_components
+          grep -q '"version": "3.1.17"' custom_components/sbc5_control_center/manifest.json
+          grep -q 'sbc5_ethernet_health' custom_components/sbc5_control_center/sensor.py
+          grep -q 'ethernet_health.json' custom_components/sbc5_control_center/coordinator.py
 
-## English
-
-- Adds `SBC5 Ethernet Health`, `SBC5 Ethernet Link Flaps` and `SBC5 Ethernet EEE Status` entities.
-- Reads the lightweight Ethernet health state produced by SBC5 Control Center without additional network polling from Home Assistant.
-- Keeps the integration version aligned with SBC5 Control Center App 3.1.17.
-
-## Polski
-
-- Dodaje encje `SBC5 Ethernet Health`, `SBC5 Ethernet Link Flaps` oraz `SBC5 Ethernet EEE Status`.
-- Odczytuje lekki stan diagnostyczny Ethernet generowany przez SBC5 Control Center bez dodatkowego odpytywania sieci przez Home Assistant.
-- Zachowuje zgodność wersji z aplikacją SBC5 Control Center 3.1.17.
-'''
-          Path(f'RELEASE_NOTES_{version}.md').write_text(notes, encoding='utf-8')
-          changelog = Path('CHANGELOG.md')
-          old = changelog.read_text(encoding='utf-8') if changelog.exists() else '# Changelog\n\n'
-          if f'## {version}' not in old:
-              entry = '''## 3.1.17 — 2026-10-29
-
-### English
-
-#### Added
-- Ethernet health, link-flap counter and EEE status entities supplied by SBC5 Control Center App 3.1.17.
-
-### Polski
-
-#### Dodano
-- Encje stanu Ethernet, licznika zrywania linku i statusu EEE dostarczane przez aplikację SBC5 Control Center 3.1.17.
-
-'''
-              pos = old.find('\n', old.find('#')) + 1 if old.startswith('#') else 0
-              old = old[:pos] + '\n' + entry + old[pos:]
-              changelog.write_text(old, encoding='utf-8')
-          PY
-
-      - name: Compile integration
-        run: python -m compileall -q custom_components
-
-      - name: Commit prepared integration
+      - name: Commit synchronized runtime
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add custom_components/sbc5_control_center CHANGELOG.md RELEASE_NOTES_3.1.17.md
+          git add custom_components/sbc5_control_center
           git diff --cached --check
           git commit -m "generated: prepare HACS 3.1.17 Ethernet diagnostics"
           git push origin HEAD:feat/ethernet-eee-stability-3.1.17
