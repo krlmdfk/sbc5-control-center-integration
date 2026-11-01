@@ -1,0 +1,102 @@
+name: Prepare SBC5 HACS 3.1.30
+
+on:
+  push:
+    branches: ["build/3.1.30-hacs"]
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: build/3.1.30-hacs
+          fetch-depth: 0
+
+      - name: Prepare 3.1.30 metadata
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          version = "3.1.30"
+          manifest_path = Path("custom_components/sbc5_control_center/manifest.json")
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          manifest["version"] = version
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          const_path = Path("custom_components/sbc5_control_center/const.py")
+          const = const_path.read_text(encoding="utf-8")
+          const, n = re.subn(r'^APP_VERSION\s*=\s*"[^"]+"', f'APP_VERSION = "{version}"', const, count=1, flags=re.M)
+          if n != 1:
+              raise SystemExit("APP_VERSION marker not found")
+          const_path.write_text(const, encoding="utf-8")
+
+          notes = '''# SBC5 Control Center Integration 3.1.30
+
+## English
+
+- Version parity release for SBC5 Control Center 3.1.30.
+- Keeps the Home Assistant integration entity model and polling cadence unchanged.
+- Companion release for Thermal Predictor Stability v2: median-of-3 forecast stabilization, EMA smoothing, two-cycle forecast confirmation, trend guards and richer runtime diagnostics.
+- Synchronizes the integration manifest and `APP_VERSION` marker to 3.1.30.
+
+## Polski
+
+- Wydanie zgodności wersji dla SBC5 Control Center 3.1.30.
+- Nie zmienia modelu encji integracji Home Assistant ani częstotliwości odpytywania.
+- Towarzyszy aktualizacji Thermal Predictor Stability v2: stabilizacji prognozy medianą z 3 próbek, wygładzaniu EMA, dwucyklowemu potwierdzaniu prognozy, guardom trendu i rozszerzonej diagnostyce runtime.
+- Synchronizuje manifest integracji oraz znacznik `APP_VERSION` do 3.1.30.
+'''
+          Path(f"RELEASE_NOTES_{version}.md").write_text(notes, encoding="utf-8")
+
+          changelog_path = Path("CHANGELOG.md")
+          changelog = changelog_path.read_text(encoding="utf-8")
+          if not re.search(r'^##\s+3\.1\.30\b', changelog, re.M):
+              entry = '''## 3.1.30 — 2026-11-01
+
+### English
+
+#### Changed
+- Synchronize the companion integration with SBC5 Control Center 3.1.30.
+- Keep the integration entity model and polling cadence unchanged while the application adds Thermal Predictor Stability v2.
+- Align the integration `APP_VERSION` marker with the manifest version.
+
+### Polski
+
+#### Zmieniono
+- Zsynchronizowano integrację towarzyszącą z SBC5 Control Center 3.1.30.
+- Zachowano model encji i częstotliwość odpytywania bez zmian, podczas gdy aplikacja otrzymuje Thermal Predictor Stability v2.
+- Wyrównano znacznik `APP_VERSION` integracji z wersją manifestu.
+
+'''
+              m = re.match(r'(#[^\n]*\n(?:\n)?)', changelog)
+              changelog = changelog[:m.end()] + entry + changelog[m.end():] if m else entry + changelog
+              changelog_path.write_text(changelog, encoding="utf-8")
+          PY
+
+      - name: Validate prepared integration
+        run: |
+          python -m compileall -q custom_components
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('custom_components/sbc5_control_center/manifest.json').read_text())
+          assert manifest['version'] == '3.1.30'
+          assert 'APP_VERSION = "3.1.30"' in Path('custom_components/sbc5_control_center/const.py').read_text()
+          assert Path('RELEASE_NOTES_3.1.30.md').is_file()
+          print('HACS 3.1.30 preparation: PASS')
+          PY
+
+      - name: Commit prepared release
+        run: |
+          rm -f .github/workflows/prepare-3.1.30.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "release: prepare HACS integration 3.1.30"
+          git push origin HEAD:build/3.1.30-hacs
