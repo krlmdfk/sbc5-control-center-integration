@@ -24,9 +24,9 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.15 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.33 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
-[Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://krlmdfk.github.io/sbc5-control-center/) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
+[Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://github.com/krlmdfk/sbc5-control-center-integration) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
 ---
 
@@ -36,11 +36,13 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.15
+### Current release — 3.1.33
 
-Version 3.1.15 is aligned with SBC5 Control Center App/runtime 3.1.15. The App/runtime fixes Card UI diagnostics for sparse AI workload buckets so direct confidence is no longer substituted with effective/general confidence, and missing direct PWM prediction is displayed explicitly as unavailable.
+Version 3.1.33 is a Home Assistant/HACS compatibility and maintenance release prepared in response to HACS review feedback.
 
-The integration keeps the existing entities, coordinator behavior and polling cadence unchanged. AI Cooling v5.1, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the App/runtime. The integration adds no new polling loop and does not own physical PWM control.
+It fixes blocking file I/O in the native Home Assistant repair flow by moving marker-file reads and deletes to the executor while keeping `issue_registry.async_delete_issue()` on the Home Assistant event loop. It also corrects the integration metadata so the `documentation` and `issue_tracker` links point to this integration repository and its Issues page.
+
+The integration keeps the existing entity model, coordinator behavior and polling cadence unchanged. AI Cooling, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the SBC5 Control Center App/runtime. The integration adds no additional polling loop and does not own physical PWM control.
 
 ### Capabilities
 
@@ -85,11 +87,13 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.15
+### Aktualne wydanie — 3.1.33
 
-Wersja 3.1.15 jest zgodna z aplikacją/runtime SBC5 Control Center 3.1.15. App/runtime naprawia diagnostykę Card UI dla rzadkich bucketów obciążenia AI: pewność direct nie jest już zastępowana wartością effective/ogólną, a brak bezpośredniej predykcji PWM jest jednoznacznie prezentowany jako niedostępny.
+Wersja 3.1.33 jest wydaniem serwisowym i zgodnościowym dla Home Assistant/HACS, przygotowanym zgodnie z uwagami z przeglądu HACS.
 
-Integracja zachowuje dotychczasowe encje, zachowanie koordynatora oraz częstotliwość pollingu. AI Cooling v5.1, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez App/runtime. Integracja nie dodaje nowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
+Naprawia blokujące operacje plikowe w natywnym przepływie napraw Home Assistant: odczyt oraz usuwanie pliku znacznika są wykonywane przez executor, natomiast `issue_registry.async_delete_issue()` pozostaje w pętli zdarzeń Home Assistanta. Poprawione zostały również metadane integracji — pola `documentation` i `issue_tracker` wskazują teraz bezpośrednio na repozytorium integracji oraz jego stronę Issues.
+
+Integracja zachowuje dotychczasowy model encji, zachowanie koordynatora oraz częstotliwość pollingu. AI Cooling, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez aplikację/runtime SBC5 Control Center. Integracja nie dodaje dodatkowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
 ### Możliwości
 
