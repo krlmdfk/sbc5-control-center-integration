@@ -1,3 +1,15 @@
+## 3.1.35 — 2026-11-03
+
+### English
+- Align the internal `APP_VERSION` constant with the HACS integration manifest and published release tag.
+- Preserve the HACS-reviewed template-only predictor migration and repairs executor fixes.
+- Add companion version and file-content parity checks to CI; no new cooling or polling behavior.
+
+### Polski
+- Ujednolicono wewnętrzną stałą `APP_VERSION` z manifestem integracji HACS i oznaczeniem wydania.
+- Zachowano poprawkę migracji predyktora ograniczoną do `template` oraz obsługę executora w naprawach.
+- Dodano kontrolę zgodności wersji i plików integracji z aplikacją; bez zmian chłodzenia i odpytywania.
+
 ## 3.1.34 — 2026-11-03
 
 ### English

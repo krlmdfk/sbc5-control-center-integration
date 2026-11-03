@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.34 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.1.35 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://github.com/krlmdfk/sbc5-control-center-integration) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -36,9 +36,9 @@
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.34
+### Current release — 3.1.35
 
-Version 3.1.34 restricts the AI Thermal Predictor entity-registry migration to legacy `template` sensors with exact matching unique IDs. Entities from other integrations are never removed just because they share a predictor unique ID. This follows the HACS maintainer review and preserves the repair-flow and metadata fixes from 3.1.33.
+Version 3.1.35 aligns the integration's internal `APP_VERSION` constant with its published manifest and release. It preserves the HACS maintainer migration fix introduced in 3.1.34 and provides a version-consistent installable HACS package.
 
 The integration keeps the existing entity model, coordinator behavior and polling cadence unchanged. AI Cooling, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the SBC5 Control Center App/runtime. The integration adds no additional polling loop and does not own physical PWM control.
 
@@ -85,9 +85,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.34
+### Aktualne wydanie — 3.1.35
 
-Wersja 3.1.34 ogranicza migrację rejestru encji AI Thermal Predictor wyłącznie do dawnych czujników platformy `template` o dokładnie zgodnych identyfikatorach `unique_id`. Encje innych integracji nie są usuwane z powodu zbieżności identyfikatora. Poprawka odpowiada na uwagę recenzenta HACS i zachowuje wcześniejsze naprawy przepływu napraw oraz metadanych z wersji 3.1.33.
+Wersja 3.1.35 ujednolica wewnętrzną stałą `APP_VERSION` z manifestem i opublikowanym wydaniem integracji. Zachowuje poprawkę migracji encji zgodną z uwagami recenzenta HACS z wersji 3.1.34 i dostarcza spójny wersyjnie pakiet.
 
 Integracja zachowuje dotychczasowy model encji, zachowanie koordynatora oraz częstotliwość pollingu. AI Cooling, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez aplikację/runtime SBC5 Control Center. Integracja nie dodaje dodatkowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
