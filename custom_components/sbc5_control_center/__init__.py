@@ -288,10 +288,10 @@ PREDICTOR_NATIVE_IDS = {
 
 
 def _migrate_predictor_template_entities(hass: HomeAssistant) -> None:
-    """Free the 3.1.1 package-template IDs before native sensors register.
+    """Migrate only legacy template sensor IDs before native sensors register.
 
-    Recorder history is keyed by entity_id, so the native sensors reclaim the same
-    canonical IDs after these template registry rows are removed.
+    Recorder history is keyed by entity_id, so native sensors can reclaim the
+    canonical IDs. Never remove entities owned by unrelated integrations.
     """
     registry = er.async_get(hass)
     data = hass.data.setdefault(DOMAIN, {})
@@ -299,9 +299,11 @@ def _migrate_predictor_template_entities(hass: HomeAssistant) -> None:
     for unique_id in PREDICTOR_NATIVE_IDS:
         canonical = f"sensor.{unique_id}"
         for entry in list(registry.entities.values()):
-            if entry.unique_id != unique_id or not entry.entity_id.startswith("sensor."):
-                continue
-            if entry.platform == DOMAIN:
+            if (
+                entry.platform != "template"
+                or entry.unique_id != unique_id
+                or not entry.entity_id.startswith("sensor.")
+            ):
                 continue
             overrides[unique_id] = canonical
             _LOGGER.info("Migrating AI Thermal Predictor entity %s to native SBC5 integration", entry.entity_id)

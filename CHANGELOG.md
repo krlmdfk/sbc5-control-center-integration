@@ -1,3 +1,15 @@
+## 3.1.34 — 2026-11-03
+
+### English
+- Restrict the AI Thermal Predictor entity-registry migration to legacy `template` platform sensor entries with an exact known `unique_id`.
+- Prevent deleting unrelated integrations' entities when their unique IDs match an SBC5 predictor sensor.
+- No change to native sensor definitions, cooling control or polling frequency.
+
+### Polski
+- Ograniczono migrację encji AI Thermal Predictor do dawnych czujników platformy `template` o dokładnie zgodnym `unique_id`.
+- Zabezpieczono encje innych integracji przed usunięciem w przypadku zbieżności identyfikatorów.
+- Bez zmian w natywnych sensorach, sterowaniu chłodzeniem i częstotliwości odpytywania.
+
 ## 3.1.6 — 2026-10-27
 
 ### English
