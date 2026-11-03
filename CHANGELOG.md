@@ -1,3 +1,17 @@
+## 3.1.36 — 2026-11-03
+
+### English
+- Fix canonical entity-ID collisions: only native SBC5 owners are eligible for native deduplication; unrelated platforms and existing SBC5 entities are retained.
+- Add entity-registry collision/migration and repair-executor regression tests.
+- Combine prior HACS reviewer fixes and align App/HACS version declarations; refresh bilingual HACS info.
+- No changes to AI Cooling, Adaptive PWM, fan hardware control or polling cadence.
+
+### Polski
+- Naprawiono kolizje kanonicznych identyfikatorów encji: usuwanie duplikatów dotyczy wyłącznie natywnych wpisów SBC5, bez usuwania encji innych platform.
+- Dodano testy kolizji i migracji encji oraz obsługi executora w Repairs.
+- Połączono wcześniejsze poprawki z przeglądu HACS, ujednolicono wersje i odświeżono opis HACS w PL/EN.
+- Bez zmian w AI Cooling, Adaptive PWM, sterowaniu wentylatorem i częstotliwości odpytywania.
+
 ## 3.1.35 — 2026-11-03
 
 ### English
