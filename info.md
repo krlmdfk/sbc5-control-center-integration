@@ -12,7 +12,7 @@ Integracja udostępnia w Home Assistant natywne czujniki Raspberry Pi 5, stan ch
 
 **Pełny panel Lovelace:** wymaga dodatkowo Mushroom, card-mod i ApexCharts Card z HACS. Nie są konieczne do działania samych encji integracji.
 
-**Zmiany 3.2.0:** zgodność z aplikacją SBC5 Global Community Edition dla Raspberry Pi 5; dodano dokumentację instalacji międzynarodowej i ostrzeżenie o szerokich uprawnieniach aplikacji. Bez zmian enkji, odpytywania i PWM.
+**Zmiany 3.2.0:** zgodność z aplikacją SBC5 Global Community Edition dla Raspberry Pi 5; dodano dokumentację instalacji międzynarodowej i ostrzeżenie o szerokich uprawnieniach aplikacji. Bez zmian encji, odpytywania i PWM.
 
 ## English
 
