@@ -4,13 +4,13 @@
 - Prepare version parity for SBC5 Control Center 3.2.0 Global Community Edition on Raspberry Pi 5.
 - Add international install/security guidance; App runtime retains privileged host access pending hardware review.
 - Preserve the existing native entity model, update cadence, migration protections and Repairs behavior.
-- Release candidate only until physical testing and matching App release are approved.
+- Public community release with automated validation; independent fresh-device install and first on-device 3.2.0 upgrade remain unverified at publication.
 
 ### Polski
 - Przygotowano integrację 3.2.0 zgodną z SBC5 Global Community Edition dla Raspberry Pi 5.
 - Dodano informacje o globalnej instalacji i uprawnieniach hosta wymagających testów sprzętowych.
 - Bez zmian encji, odpytywania, zabezpieczeń migracji i Repairs.
-- Kandydat wydania bez publikacji do czasu testów i synchronizacji aplikacji.
+- Publiczne wydanie społecznościowe po testach CI; czysta instalacja na drugim urządzeniu i pierwsza aktualizacja 3.2.0 na sprzęcie pozostają niezweryfikowane w momencie publikacji.
 
 ## 3.1.37 — 2026-11-08
 
