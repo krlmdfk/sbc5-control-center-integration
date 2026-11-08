@@ -24,7 +24,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące.
 
-**Version 3.1.37 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.2.0 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 [Main App](https://github.com/krlmdfk/sbc5-control-center) · [Documentation](https://github.com/krlmdfk/sbc5-control-center-integration) · [Releases](https://github.com/krlmdfk/sbc5-control-center-integration/releases) · [Issues](https://github.com/krlmdfk/sbc5-control-center-integration/issues)
 
@@ -32,13 +32,15 @@
 
 ## English
 
+> App security / Bezpieczeństwo: https://github.com/krlmdfk/sbc5-control-center/blob/main/docs/SECURITY_PRIVILEGE_AUDIT_3_2_0.md . Global community distribution does not imply official Home Assistant App catalog acceptance.
+
 ### Overview
 
 SBC5 Control Center Integration exposes SBC5 runtime data as native Home Assistant entities and device diagnostics. It is the HACS-managed companion to the main SBC5 Control Center App/runtime.
 
-### Current release — 3.1.37
+### Current release — 3.2.0
 
-Version 3.1.37 aligns the HACS integration with the SBC5 App's Thermal Predictor context-reset fix. HACS entity ownership, polling and fan-control responsibilities are unchanged. Existing HACS reviewer fixes remain in place.
+Version 3.2.0 is the companion integration for the SBC5 Global Community Edition App. The App targets Raspberry Pi 5 only and requires elevated host privileges; read the security information before installing the App. The integration adds no polling or physical fan control.
 
 The integration keeps the existing entity model, coordinator behavior and polling cadence unchanged. AI Cooling, Thermal Predictor, Adaptive PWM and physical fan control remain implemented by the SBC5 Control Center App/runtime. The integration adds no additional polling loop and does not own physical PWM control.
 
@@ -85,9 +87,9 @@ The integration contains `.hacs_managed`. The App detects this marker and does n
 
 SBC5 Control Center Integration udostępnia dane runtime SBC5 jako natywne encje Home Assistant oraz diagnostykę urządzenia. Jest to zarządzana przez HACS integracja towarzysząca głównej aplikacji/runtime SBC5 Control Center.
 
-### Aktualne wydanie — 3.1.37
+### Aktualne wydanie — 3.2.0
 
-Wersja 3.1.37 ujednolica integrację HACS z aplikacją SBC5 zawierającą poprawkę resetowania prognozy Thermal Predictora po zmianie warunków. Encje HACS, odpytywanie i sterowanie wentylatorem pozostają bez zmian.
+Wersja 3.2.0 to integracja dla aplikacji SBC5 Global Community Edition. Aplikacja działa na Raspberry Pi 5 i wymaga szerokich uprawnień hosta. Integracja nie dodaje odpytywania ani sterowania fizycznym PWM.
 
 Integracja zachowuje dotychczasowy model encji, zachowanie koordynatora oraz częstotliwość pollingu. AI Cooling, Thermal Predictor, Adaptive PWM oraz fizyczne sterowanie wentylatorem pozostają realizowane przez aplikację/runtime SBC5 Control Center. Integracja nie dodaje dodatkowej pętli pollingu i nie przejmuje fizycznego sterowania PWM.
 
