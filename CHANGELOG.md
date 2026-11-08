@@ -1,3 +1,13 @@
+## 3.1.37 — 2026-11-08
+
+### English
+- Align integration manifest, APP_VERSION and documentation with SBC5 Control Center App 3.1.37.
+- Thermal Predictor context resets are implemented in App/runtime only; no integration entity, polling or physical fan-control changes.
+
+### Polski
+- Ujednolicono manifest, APP_VERSION i dokumentację integracji z SBC5 Control Center App 3.1.37.
+- Reset stanu prognozy Thermal Predictora realizuje tylko aplikacja; bez zmian encji integracji, odpytywania i sterowania wentylatorem.
+
 ## 3.1.36 — 2026-11-03
 
 ### English
