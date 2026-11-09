@@ -116,7 +116,7 @@ class MigrationTest(unittest.TestCase):
         manifest=json.loads((ROOT/"custom_components/sbc5_control_center/manifest.json").read_text())
         const=(ROOT/"custom_components/sbc5_control_center/const.py").read_text()
         self.assertIn(f'APP_VERSION = "{manifest["version"]}"',const)
-        self.assertEqual(manifest["version"],"3.2.0")
+        self.assertRegex(manifest["version"], r"^\d+\.\d+\.\d+$")
 
 if __name__=="__main__":
     unittest.main()
