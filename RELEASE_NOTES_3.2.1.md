@@ -1,0 +1,94 @@
+# SBC5 Control Center Integration 3.2.1
+
+<p align="center">
+  <a href="https://github.com/krlmdfk/sbc5-control-center">
+    <img src="https://raw.githubusercontent.com/krlmdfk/sbc5-control-center/main/branding/icon-256.png" alt="SBC5 Control Center" width="120">
+  </a>
+</p>
+
+> Companion Home Assistant integration for SBC5 Control Center on Raspberry Pi 5.
+>
+> Integracja towarzysząca Home Assistant dla SBC5 Control Center na Raspberry Pi 5.
+
+## English
+
+### Highlights
+
+- AI model preservation and cooling stability improvements
+Summary PL Ochrona modelu AI i popra
+
+### Requirements
+
+- **SBC5 Control Center App/runtime must already be installed and running.**
+- Home Assistant Core >= 2026.10.1
+- HACS-managed installation
+- Raspberry Pi 5 host services are provided by the main App/runtime
+
+### Upgrade notes
+
+- Restart Home Assistant after installation/update when requested by HACS.
+- A Raspberry Pi host restart is not required by the integration update itself unless the main App release explicitly says otherwise.
+- Existing integration configuration should be preserved during a normal HACS upgrade.
+
+### Compatibility
+
+- Raspberry Pi 5
+- Home Assistant Core >= 2026.10.1
+- HACS custom integration
+- SBC5 Control Center App/runtime required
+
+### Verification
+
+- HACS repository validation
+- Home Assistant Hassfest validation
+- Python compilation
+- JSON validation
+
+### Links
+
+- Main App/runtime: https://github.com/krlmdfk/sbc5-control-center
+- Integration repository: https://github.com/krlmdfk/sbc5-control-center-integration
+- Documentation: https://krlmdfk.github.io/sbc5-control-center/
+- Issues: https://github.com/krlmdfk/sbc5-control-center-integration/issues
+
+---
+
+## Polski
+
+### Najważniejsze zmiany
+
+- Ochrona modelu AI i poprawa stabilności chłodzenia
+
+### Wymagania
+
+- **Aplikacja/runtime SBC5 Control Center musi być wcześniej zainstalowana i uruchomiona.**
+- Home Assistant Core >= 2026.10.1
+- Instalacja zarządzana przez HACS
+- Usługi hosta Raspberry Pi 5 dostarcza główna aplikacja/runtime
+
+### Informacje o aktualizacji
+
+- Po instalacji/aktualizacji uruchom ponownie Home Assistant, gdy HACS tego wymaga.
+- Sama aktualizacja integracji nie wymaga restartu hosta Raspberry Pi, chyba że wydanie głównej aplikacji wyraźnie stanowi inaczej.
+- Przy standardowej aktualizacji HACS istniejąca konfiguracja integracji powinna zostać zachowana.
+
+### Zgodność
+
+- Raspberry Pi 5
+- Home Assistant Core >= 2026.10.1
+- Niestandardowa integracja HACS
+- Wymagana aplikacja/runtime SBC5 Control Center
+
+### Weryfikacja
+
+- Walidacja repozytorium HACS
+- Home Assistant Hassfest
+- Kompilacja Pythona
+- Walidacja JSON
+
+### Linki
+
+- Główna aplikacja/runtime: https://github.com/krlmdfk/sbc5-control-center
+- Repozytorium integracji: https://github.com/krlmdfk/sbc5-control-center-integration
+- Dokumentacja: https://krlmdfk.github.io/sbc5-control-center/
+- Zgłoszenia: https://github.com/krlmdfk/sbc5-control-center-integration/issues
