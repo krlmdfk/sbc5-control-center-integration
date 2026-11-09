@@ -15,7 +15,6 @@
 ### Highlights
 
 - AI model preservation and cooling stability improvements
-Summary PL Ochrona modelu AI i popra
 
 ### Requirements
 

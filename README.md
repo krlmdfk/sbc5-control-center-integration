@@ -58,7 +58,6 @@ SBC5 Control Center Integration exposes SBC5 data and control state as native Ho
 ### Current release
 
 AI model preservation and cooling stability improvements
-Summary PL Ochrona modelu AI i popra
 
 ### Architecture
 

@@ -25,7 +25,6 @@ The App provides Raspberry Pi 5 host telemetry and control services. This HACS i
 For the **complete SBC5 Lovelace dashboard**, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**. The native integration itself can operate without these frontend cards.
 
 AI model preservation and cooling stability improvements
-Summary PL Ochrona modelu AI i popra
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
