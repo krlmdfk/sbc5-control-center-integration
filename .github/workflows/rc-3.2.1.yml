@@ -1,0 +1,64 @@
+name: Build SBC5 HACS 3.2.1-rc1 test archive
+
+on:
+  push:
+    branches:
+      - rc/3.2.1-rc1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-rc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate integration and regression tests
+        run: |
+          set -euo pipefail
+          python -m compileall -q custom_components
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('custom_components/sbc5_control_center/manifest.json').read_text())
+          assert manifest['version'] == '3.2.1-rc1'
+          assert manifest['domain'] == 'sbc5_control_center'
+          print('HACS RC manifest: PASS')
+          PY
+
+      - name: Build manual-installation ZIP
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path('custom_components/sbc5_control_center')
+          destination = Path('dist/SBC5_HACS_Integration_3.2.1-rc1.zip')
+          with ZipFile(destination, 'w', compression=ZIP_DEFLATED, compresslevel=9) as out:
+              for path in sorted(root.rglob('*')):
+                  if path.is_file() and '__pycache__' not in path.parts and path.suffix != '.pyc':
+                      out.write(path, path.as_posix())
+          digest = hashlib.sha256(destination.read_bytes()).hexdigest()
+          (destination.parent / (destination.stem + '.sha256')).write_text(
+              digest + '  ' + destination.name + '\n')
+          with ZipFile(destination) as archive:
+              assert 'custom_components/sbc5_control_center/manifest.json' in archive.namelist()
+          print(f'HACS prerelease archive: {destination}, SHA256 {digest}')
+          PY
+
+      - name: Upload HACS RC artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SBC5_HACS_Integration_3.2.1-rc1_TEST_ONLY
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            dist/SBC5_HACS_Integration_3.2.1-rc1.zip
+            dist/SBC5_HACS_Integration_3.2.1-rc1.sha256
