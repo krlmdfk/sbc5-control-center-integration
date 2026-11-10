@@ -23,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Strictly compare native HACS candidate to SBC5 App main
+        run: python scripts/check_companion_parity.py --role hacs --app-ref main
+      - name: Strictly compare native HACS candidate to SBC5 thermal PR 75
+        run: python scripts/check_companion_parity.py --role hacs --app-ref fix/thermal-quality-hysteresis-20261110
       - name: Compare native code, embedded bridge and version markers
         run: |
           if [ "$GITHUB_EVENT_NAME" = "push" ] || [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
