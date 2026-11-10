@@ -23,10 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compare native code, embedded bridge and version markers
-        run: |
-          if [ "$GITHUB_EVENT_NAME" = "push" ] || [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
-            python scripts/check_companion_parity.py --role hacs --advisory
-          else
-            python scripts/check_companion_parity.py --role hacs
-          fi
+      - name: Strictly compare native HACS integration to SBC5 App main
+        run: python scripts/check_companion_parity.py --role hacs --app-ref main
+      - name: Strictly compare HACS PR 36 to SBC5 thermal PR 75 (candidate only)
+        if: github.head_ref == 'safety/3-2-1-namespace-ownership-parity' || github.ref_name == 'safety/3-2-1-namespace-ownership-parity'
+        run: python scripts/check_companion_parity.py --role hacs --app-ref fix/thermal-quality-hysteresis-20261110
