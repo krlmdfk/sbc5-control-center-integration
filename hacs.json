@@ -1,4 +1,6 @@
 {
   "name": "SBC5 Control Center",
-  "homeassistant": "2026.10.1"
+  "homeassistant": "2026.10.1",
+  "zip_release": true,
+  "filename": "SBC5_Control_Center_Integration.zip"
 }
