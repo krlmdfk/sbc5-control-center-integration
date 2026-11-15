@@ -31,7 +31,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 i usługi sterujące wykorzystywane przez integrację.
 
-**Version 3.2.3 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.2.4 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -57,7 +57,7 @@ SBC5 Control Center Integration exposes SBC5 data and control state as native Ho
 
 ### Current release
 
-Minimal GitHub Release ZIP download counters for App and HACS
+SBC5 Control Center 3.2.4 — download counters, improved release validation and synchronized HACS integration.
 
 ### Architecture
 
@@ -136,7 +136,7 @@ SBC5 Control Center Integration udostępnia dane i stan sterowania SBC5 jako nat
 
 ### Aktualne wydanie
 
-Liczniki pobrań ZIP aplikacji i integracji HACS
+SBC5 Control Center 3.2.4 — liczniki pobrań, usprawniona walidacja wydań i synchronizacja integracji HACS.
 
 ### Architektura
 
