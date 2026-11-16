@@ -14,7 +14,7 @@
 
 Native Home Assistant companion integration for **SBC5 Control Center** on Raspberry Pi 5.
 
-**Version:** 3.2.4
+**Version:** 3.2.5
 
 **Home Assistant:** >= 2026.10.1
 
@@ -24,7 +24,7 @@ The App provides Raspberry Pi 5 host telemetry and control services. This HACS i
 
 For the **complete SBC5 Lovelace dashboard**, also install through HACS: **Mushroom**, **card-mod**, and **ApexCharts Card**. The native integration itself can operate without these frontend cards.
 
-SBC5 Control Center 3.2.4 — download counters, improved release validation and synchronized HACS integration.
+Acoustic PWM guard to reduce fan noise during backup workloads while preserving thermal safety.
 
 **[Open the required SBC5 Control Center App →](https://github.com/krlmdfk/sbc5-control-center)**
 
@@ -34,7 +34,7 @@ SBC5 Control Center 3.2.4 — download counters, improved release validation and
 
 Natywna integracja towarzysząca Home Assistant dla **SBC5 Control Center** na Raspberry Pi 5.
 
-**Wersja:** 3.2.4
+**Wersja:** 3.2.5
 
 **Home Assistant:** >= 2026.10.1
 
@@ -44,6 +44,6 @@ Aplikacja dostarcza telemetrię hosta Raspberry Pi 5 oraz usługi sterujące. In
 
 Dla **kompletnego dashboardu Lovelace SBC5** zainstaluj również przez HACS: **Mushroom**, **card-mod** i **ApexCharts Card**. Sama natywna integracja może działać bez tych kart frontendowych.
 
-SBC5 Control Center 3.2.4 — liczniki pobrań, usprawniona walidacja wydań i synchronizacja integracji HACS.
+Ograniczenie hałasu wentylatora podczas kopii zapasowej z zachowaniem zabezpieczeń termicznych.
 
 **[Otwórz wymaganą aplikację SBC5 Control Center →](https://github.com/krlmdfk/sbc5-control-center)**
