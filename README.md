@@ -31,7 +31,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 i usługi sterujące wykorzystywane przez integrację.
 
-**Version 3.2.6 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.2.7 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -57,7 +57,7 @@ SBC5 Control Center Integration exposes SBC5 data and control state as native Ho
 
 ### Current release
 
-Improved acoustic PWM control during backup workloads, with faster fan recovery and preserved thermal safety.
+Smarter thermal-aware PWM control with reduced fan noise, monitored temperature headroom and preserved hardware safety.
 
 ### Architecture
 
@@ -136,7 +136,7 @@ SBC5 Control Center Integration udostępnia dane i stan sterowania SBC5 jako nat
 
 ### Aktualne wydanie
 
-Usprawnione ograniczanie hałasu wentylatora podczas kopii zapasowych, szybsze zmniejszanie obrotów i zachowane zabezpieczenia termiczne.
+Inteligentne sterowanie PWM z ograniczeniem hałasu, nadzorowanym zapasem temperaturowym i zachowaniem pełnych zabezpieczeń sprzętowych.
 
 ### Architektura
 
