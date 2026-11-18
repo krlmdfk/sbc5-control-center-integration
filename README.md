@@ -31,7 +31,7 @@
 >
 > **Wymagana jest aplikacja/runtime SBC5 Control Center.** To repozytorium zawiera wyłącznie integrację Home Assistant. Aplikacja/runtime dostarcza telemetrię hosta Raspberry Pi 5 i usługi sterujące wykorzystywane przez integrację.
 
-**Version 3.2.8 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
+**Version 3.2.9 · HACS-ready · Home Assistant ≥ 2026.10.1 · Apache-2.0**
 
 **English** · [Polski](#polski)
 
@@ -57,7 +57,7 @@ SBC5 Control Center Integration exposes SBC5 data and control state as native Ho
 
 ### Current release
 
-Quieter backup-time cooling with improved CPU temperature spike handling, monitored PWM headroom and preserved thermal safety.
+Improved AI Cooling with validated dynamic learning for medium/high workloads, enhanced diagnostics and preserved thermal safety.
 
 ### Architecture
 
@@ -136,7 +136,7 @@ SBC5 Control Center Integration udostępnia dane i stan sterowania SBC5 jako nat
 
 ### Aktualne wydanie
 
-Cichsze chłodzenie podczas kopii zapasowej dzięki ulepszonemu filtrowaniu skoków temperatury CPU, nadzorowaniu PWM i zachowaniu zabezpieczeń termicznych.
+Ulepszone AI Cooling z weryfikacją dynamicznych próbek obciążenia medium/high, rozszerzoną diagnostyką i zachowaniem zabezpieczeń termicznych.
 
 ### Architektura
 
