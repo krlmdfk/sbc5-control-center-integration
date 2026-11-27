@@ -28,10 +28,14 @@ IGNORED = {".hacs_managed", ".DS_Store"}
 
 
 def request_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers={
+    headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "sbc5-companion-parity",
-    })
+    }
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as response:
         return json.load(response)
 
@@ -172,7 +176,7 @@ def main() -> int:
             stream.write("### Companion synchronization audit\n\n")
             stream.write(f"Status: {'PASS' if not errors else 'DRIFT'} "
                          f"({'advisory' if args.advisory else 'strict'})\n\n")
-            stream.write(f"App: \`{args.app_ref}\` · HACS: \`{args.hacs_ref}\`\n\n")
+            stream.write(f"App: `{args.app_ref}` · HACS: `{args.hacs_ref}`\n\n")
             for error in errors[:60]:
                 stream.write(f"- {error}\n")
     return int(bool(errors) and not args.advisory)
